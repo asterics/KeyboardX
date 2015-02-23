@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+A simple keyboard with a 2x2 grid and different button background colors.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  <grid id="g1">
+    <dimension cols="2" rows="2" />
+    <button id="btA0">
+      <position x="0" y="0" />
+      <text>red bg</text>
+      <style>
+        <buttonBackColor>#aa0000</buttonBackColor>
+      </style>
+    </button>
+    <button id="btA1">
+      <position x="1" y="0" />
+      <text>green bg</text>
+      <style>
+        <buttonBackColor>#00aa00</buttonBackColor>
+      </style>
+    </button>
+    <button id="btB0">
+      <position x="0" y="1" />
+      <text>blue bg</text>
+      <style>
+        <buttonBackColor>#0000aa</buttonBackColor>
+      </style>
+    </button>
+    <button id="btB1">
+      <position x="1" y="1" />
+      <text>default bg</text>
+    </button>
+  </grid>
+</keyboard>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Test scanner action.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  <default>
+    <scanner>
+      <active>true</active>
+      <type>linear</type>
+    </scanner>
+  </default>
+  
+  <grid id="g1">
+    <dimension cols="2" rows="2" />
+    
+    <button id="bt0-0">
+      <position x="0" y="0" />
+      <text>Start</text>
+      <action xsi:type="scanner" start="true" />
+    </button>
+    <button id="bt1-0">
+      <position x="1" y="0" />
+      <text>NOP</text>
+    </button>
+
+    <button id="bt0-1">
+      <position x="0" y="1" />
+      <text>NOP</text>
+    </button>
+    <button id="bt1-1">
+      <position x="1" y="1" />
+      <text>Stop</text>
+      <action xsi:type="scanner" start="false" />
+    </button>
+    
+  </grid>
+</keyboard>

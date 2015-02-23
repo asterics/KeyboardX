@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+A keyboard with a 3x3 grid containing icons with various supported formats.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  <grid id="g1">
+    <dimension cols="3" rows="3" />
+    <button id="bt01">
+      <position x="0" y="0" />
+      <icon>mix/bmp-icon.bmp</icon>
+      <text alignment="bottom">bmp</text>
+    </button>
+    <button id="bt02">
+      <position x="1" y="0" />
+      <icon>mix/jpg-icon.jpg</icon>
+      <text alignment="bottom">jpg</text>
+    </button>
+    <button id="bt03">
+      <position x="2" y="0" />
+      <icon>mix/png-icon.png</icon>
+      <text alignment="bottom">png</text>
+    </button>
+    <!-- row switch -->
+    <button id="bt04">
+      <position x="0" y="1" />
+      <icon>mix/gif-icon.gif</icon>
+      <text alignment="bottom">gif</text>
+    </button>
+    <button id="bt05">
+      <position x="1" y="1" />
+      <icon>mix/tif-icon.tif</icon>
+      <text alignment="bottom">tif</text>
+    </button>
+    <button id="bt06">
+      <position x="2" y="1" />
+      <icon>mix/svg-icon.svg</icon>
+      <text alignment="bottom">svg</text>
+    </button>
+    <!-- row switch -->
+    <button id="bt07">
+      <position x="0" y="2" />
+      <icon>mix/wmf-icon.wmf</icon>
+      <text alignment="bottom">wmf</text>
+    </button>
+    <button id="bt08">
+      <position x="1" y="2" />
+      <icon>mix/emf-icon.emf</icon>
+      <text alignment="bottom">emf</text>
+    </button>
+    <button id="bt09">
+      <position x="2" y="2" />
+      <icon>mix/invalid.txt</icon>
+      <text>invalid</text>
+    </button>
+  </grid>
+</keyboard>

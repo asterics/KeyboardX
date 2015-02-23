@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This schema defines a valid XML layout for a config file for Player.
+-->
+<xs:schema
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.jku.at/iis/something"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+>
+  <xs:element name="config">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="global" type="globalType" />
+        <xs:element name="scanner" type="scannerType" />
+        <xs:element name="style" type="styleType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="globalType">
+    <xs:sequence>
+      <xs:element name="schemaFileName" type="xs:string" />
+      <!--
+      If keyboard file should be validated against given schema file. If validation fails opening 
+      keyboard fails with error message.
+      -->
+      <xs:element name="schemaValidation" type="xs:boolean" />
+      <xs:element name="clickTriggerActive" type="xs:boolean" />
+      <xs:element name="showMouseChanges" type="xs:boolean" />
+      <!--
+      If actions of a button should be run synchronous after a button press, asynchronous otherwise.
+      -->
+      <xs:element name="buttonPressSynchronous" type="xs:boolean" />
+      <xs:element name="net" type="netType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="netType">
+    <xs:sequence>
+      <xs:element name="tcpDestination" type="tcpDestinationType" minOccurs="0" 
+                  maxOccurs="unbounded" />
+      <xs:element name="tcpSink" type="tcpSinkType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Can be used as a reference for TCP actions. -->
+  <xs:complexType name="tcpDestinationType">
+    <xs:sequence>
+      <xs:element name="host" type="xs:string" />
+      <xs:element name="port" type="xs:positiveInteger" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+  </xs:complexType>
+
+  <!-- Can be used for debugging TCP actions. -->
+  <xs:complexType name="tcpSinkType">
+    <xs:attribute name="active" type="xs:boolean" />
+    <xs:attribute name="port" type="xs:positiveInteger" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="scannerType">
+    <xs:sequence>
+      <!--
+      If scanner should be active. If global scanning is deactivated, it still can explicitly 
+      be activated at keyboard or grid level (or activated).
+      -->
+      <xs:element name="active" type="xs:boolean" />
+      
+      <!-- This scanner will be used if no other is defined in model. -->
+      <xs:element name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="row-column" />
+            <xs:enumeration value="column-row" />
+            <xs:enumeration value="linear" />
+            <xs:enumeration value="test" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <!-- The time a scanning thread waits, until it actually starts scanning. -->
+      <xs:element name="initialScanDelay" type="xs:nonNegativeInteger" />
+
+      <!-- The time a trigger at least has to be pressed before it is accepted as valid input. -->
+      <xs:element name="inputAcceptanceTime" type="xs:nonNegativeInteger" />
+
+      <!-- The time after an accepted trigger, where subsequent triggers are ignored. -->
+      <xs:element name="postAcceptanceDelay" type="xs:nonNegativeInteger" />
+
+      <!--
+      The time after a trigger that yielded button execution, the button stays selected and can be 
+      triggered again.
+      -->
+      <xs:element name="postInputAcceptanceTime" type="xs:nonNegativeInteger" />
+
+      <!--
+      The time between an accepted trigger after [InputAcceptanceTime] and the second trigger.
+      -->
+      <xs:element name="repeatAcceptanceDelay" type="xs:nonNegativeInteger" />
+
+      <!-- The time after [RepeatAcceptanceDelay] that a trigger is raised frequently. -->
+      <xs:element name="repeatTime" type="xs:nonNegativeInteger" />
+
+      <!--
+      When using automatic scanning, this is the time where a [ButtonGroup] is focused before the 
+      scanner switches to the next.
+      
+      Has to be greater than [InputAcceptanceTime].
+      -->
+      <xs:element name="scanTime" type="xs:nonNegativeInteger" />
+
+      <!--
+      If scanning should start at the leftmost column, otherwise at the rightmost. 
+      Ignored if not suitable.
+      -->
+      <xs:element name="startLeft" type="xs:boolean" />
+
+      <!--
+      If scanning should start at the topmost row, otherwise at the bottommost. 
+      Ignored if not suitable.
+      -->
+      <xs:element name="startTop" type="xs:boolean" />
+
+      <!--
+      If linear scanning should move horizontally, otherwise vertically. Ignored if not suitable.
+      -->
+      <xs:element name="moveHorizontal" type="xs:boolean" />
+
+      <!--
+      How many times to cycle through a local scanning area, before switching back to the parent 
+      one. Ignored if not suitable (e.g. linear scanner).
+      
+      For example:
+      In a row-column scanner, if switched to local scanning (column) scanning, how many times to 
+      cycle through all columns before switching back to global (row) scanning.
+      -->
+      <xs:element name="localCycleLimit" type="xs:nonNegativeInteger" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- A merge of 'buttonStyleType' and 'gridStyleType' from keyboard schema. -->
+  <xs:complexType name="styleType">
+    <xs:sequence>
+      <xs:element name="drawer">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="border" />
+            <xs:enumeration value="border-gap" />
+            <xs:enumeration value="border-margin" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="gridBackColor" type="xs:string" />
+      <xs:element name="gridBorderColor" type="xs:string" />
+      <xs:element name="selectColor" type="xs:string" />
+      <xs:element name="mouseColor" type="xs:string" />
+      <xs:element name="borderWidth" type="xs:positiveInteger" />
+      <xs:element name="marginWidth" type="xs:positiveInteger" />
+      <xs:element name="gapWidth" type="xs:positiveInteger" />
+      <xs:element name="buttonBackColor" type="xs:string" />
+      <!--
+      <xs:element name="buttonBorderColor" type="xs:string" />
+      -->
+      <xs:element name="buttonFontColor" type="xs:string" />
+      <!--
+      <xs:element name="buttonFontSize" type="xs:positiveInteger" />
+      -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--
+  Allows hexadecimal color codes in both short and long form (e.g. #333 or #FF00AA).
+  Copied from keyboard schema.
+  -->
+  <xs:simpleType name="colorType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="#([0-9a-fA-F]{3}){1,2}" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>

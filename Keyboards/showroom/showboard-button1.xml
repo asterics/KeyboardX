@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Show buttons greater one and some drawing stuff.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1.xsd"
+    version="20150101"
+>
+  
+  <default>
+    <scanner>
+      <active>false</active>
+      <type>linear</type>
+    </scanner>
+  </default>
+
+  <grid id="g1">
+    <style>
+      <drawer>border</drawer>
+    </style>
+    <dimension cols="7" rows="7" />
+    <button id="b1">
+      <position x="0" y="0" dimX="2" dimY="2" />
+      <text>1</text>
+    </button>
+    <button id="b2">
+      <position x="5" y="0" dimX="2" dimY="2" />
+      <text>2</text>
+    </button>
+    <button id="b3">
+      <position x="5" y="5" dimX="2" dimY="2" />
+      <text>3</text>
+    </button>
+    <button id="b4">
+      <position x="0" y="5" dimX="2" dimY="2" />
+      <text>4</text>
+    </button>
+    <button id="b5">
+      <position x="2" y="1" dimX="3" />
+      <text>5</text>
+    </button>
+    <button id="b6">
+      <position x="5" y="2" dimY="3" />
+      <text>6</text>
+    </button>
+    <button id="b7">
+      <position x="2" y="5" dimX="3" />
+      <text>7</text>
+    </button>
+    <button id="b8">
+      <position x="1" y="2" dimY="3" />
+      <text>8</text>
+    </button>
+    <button id="b9">
+      <position x="3" y="3" />
+      <text>9</text>
+      <action xsi:type="switch" grid="g2" />
+    </button>
+  </grid>
+
+  <grid id="g2">
+    <style>
+      <drawer>border-gap</drawer>
+      <borderWidth>6</borderWidth>
+      <gapWidth>3</gapWidth>
+      <gridBackColor>#FFFFCC</gridBackColor>
+      <mouseColor>#6600CC</mouseColor>
+    </style>
+    <dimension cols="7" rows="7" />
+    <button id="b1">
+      <position x="0" y="0" dimX="2" dimY="2" />
+      <text>1</text>
+    </button>
+    <button id="b2">
+      <position x="5" y="0" dimX="2" dimY="2" />
+      <text>2</text>
+    </button>
+    <button id="b3">
+      <position x="5" y="5" dimX="2" dimY="2" />
+      <text>3</text>
+    </button>
+    <button id="b4">
+      <position x="0" y="5" dimX="2" dimY="2" />
+      <text>4</text>
+    </button>
+    <button id="b5">
+      <position x="2" y="1" dimX="3" />
+      <text>5</text>
+    </button>
+    <button id="b6">
+      <position x="5" y="2" dimY="3" />
+      <text>6</text>
+    </button>
+    <button id="b7">
+      <position x="2" y="5" dimX="3" />
+      <text>7</text>
+    </button>
+    <button id="b8">
+      <position x="1" y="2" dimY="3" />
+      <text>8</text>
+    </button>
+    <button id="b9">
+      <position x="3" y="3" />
+      <text>9</text>
+      <action xsi:type="switch" grid="g3" />
+    </button>
+  </grid>
+
+  <grid id="g3">
+    <style>
+      <buttonBackColor>#B3D9FF</buttonBackColor>
+      <drawer>border-margin</drawer>
+      <mouseColor>#FF0000</mouseColor>
+    </style>
+    <dimension cols="7" rows="7" />
+    <button id="b1">
+      <position x="0" y="0" dimX="2" dimY="2" />
+      <text>1</text>
+    </button>
+    <button id="b2">
+      <position x="5" y="0" dimX="2" dimY="2" />
+      <text>2</text>
+    </button>
+    <button id="b3">
+      <position x="5" y="5" dimX="2" dimY="2" />
+      <text>3</text>
+    </button>
+    <button id="b4">
+      <position x="0" y="5" dimX="2" dimY="2" />
+      <text>4</text>
+    </button>
+    <button id="b5">
+      <position x="2" y="1" dimX="3" />
+      <text>5</text>
+    </button>
+    <button id="b6">
+      <position x="5" y="2" dimY="3" />
+      <text>6</text>
+    </button>
+    <button id="b7">
+      <position x="2" y="5" dimX="3" />
+      <text>7</text>
+    </button>
+    <button id="b8">
+      <position x="1" y="2" dimY="3" />
+      <text>8</text>
+    </button>
+    <button id="b9">
+      <position x="3" y="3" />
+      <text>9</text>
+      <action xsi:type="switch" grid="g4" />
+    </button>
+  </grid>
+
+  <grid id="g4">
+    <style>
+      <buttonBackColor>#000</buttonBackColor>
+      <drawer>border-margin</drawer>
+      <gridBorderColor>#FF00CC</gridBorderColor>
+      <marginWidth>10</marginWidth>
+    </style>
+    <dimension cols="7" rows="7" />
+    <button id="b1">
+      <position x="0" y="0" dimX="2" dimY="2" />
+      <text>1</text>
+      <style>
+        <buttonFontColor>#FF004D</buttonFontColor>
+      </style>
+    </button>
+    <button id="b2">
+      <position x="5" y="0" dimX="2" dimY="2" />
+      <text>2</text>
+      <style>
+        <buttonFontColor>#CCCCFF</buttonFontColor>
+      </style>
+    </button>
+    <button id="b3">
+      <position x="5" y="5" dimX="2" dimY="2" />
+      <text>3</text>
+      <style>
+        <buttonFontColor>#FFFFCC</buttonFontColor>
+      </style>
+    </button>
+    <button id="b4">
+      <position x="0" y="5" dimX="2" dimY="2" />
+      <text>4</text>
+      <style>
+        <buttonFontColor>#00FFB3</buttonFontColor>
+      </style>
+    </button>
+    <button id="b5">
+      <position x="2" y="1" dimX="3" />
+      <text>5</text>
+      <style>
+        <buttonFontColor>#FF6633</buttonFontColor>
+      </style>
+    </button>
+    <button id="b6">
+      <position x="5" y="2" dimY="3" />
+      <text>6</text>
+      <style>
+        <buttonFontColor>#993333</buttonFontColor>
+      </style>
+    </button>
+    <button id="b7">
+      <position x="2" y="5" dimX="3" />
+      <text>7</text>
+      <style>
+        <buttonFontColor>#FFCCFF</buttonFontColor>
+      </style>
+    </button>
+    <button id="b8">
+      <position x="1" y="2" dimY="3" />
+      <text>8</text>
+      <style>
+        <buttonFontColor>#B3FF00</buttonFontColor>
+      </style>
+    </button>
+    <button id="b9">
+      <position x="3" y="3" />
+      <text>9</text>
+      <style>
+        <buttonFontColor>#FF7A7A</buttonFontColor>
+      </style>
+      <action xsi:type="switch" grid="g1" />
+    </button>
+  </grid>
+  
+</keyboard>

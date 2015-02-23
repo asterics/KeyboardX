@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Test grid with just one column.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  <grid id="g1">
+    <dimension cols="1" rows="3" />
+    <button id="btn0-0">
+      <position x="0" y="0" />
+      <text>btn0-0</text>
+    </button>
+    <button id="btn0-1">
+      <position x="0" y="1" />
+      <text>btn0-1</text>
+    </button>
+    <button id="btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+    </button>
+  </grid>
+</keyboard>

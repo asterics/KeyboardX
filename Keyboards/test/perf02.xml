@@ -1,0 +1,615 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+A keyboard with a 15x10 grid full of icons (512x512 pixels) for performance testing.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  <grid id="main">
+    <dimension cols="15" rows="10" />
+    <button id="btn0-0">
+      <position x="0" y="0" />
+      <icon>basic\png\add73.png</icon>
+    </button>
+    <button id="btn1-0">
+      <position x="1" y="0" />
+      <icon>basic\png\arrow476.png</icon>
+    </button>
+    <button id="btn2-0">
+      <position x="2" y="0" />
+      <icon>basic\png\arrow477.png</icon>
+    </button>
+    <button id="btn3-0">
+      <position x="3" y="0" />
+      <icon>basic\png\arrow478.png</icon>
+    </button>
+    <button id="btn4-0">
+      <position x="4" y="0" />
+      <icon>basic\png\arrow479.png</icon>
+    </button>
+    <button id="btn5-0">
+      <position x="5" y="0" />
+      <icon>basic\png\arrow480.png</icon>
+    </button>
+    <button id="btn6-0">
+      <position x="6" y="0" />
+      <icon>basic\png\arrow481.png</icon>
+    </button>
+    <button id="btn7-0">
+      <position x="7" y="0" />
+      <icon>basic\png\arrow482.png</icon>
+    </button>
+    <button id="btn8-0">
+      <position x="8" y="0" />
+      <icon>basic\png\arrow483.png</icon>
+    </button>
+    <button id="btn9-0">
+      <position x="9" y="0" />
+      <icon>basic\png\arrow484.png</icon>
+    </button>
+    <button id="btn10-0">
+      <position x="10" y="0" />
+      <icon>basic\png\arrow485.png</icon>
+    </button>
+    <button id="btn11-0">
+      <position x="11" y="0" />
+      <icon>basic\png\arrow486.png</icon>
+    </button>
+    <button id="btn12-0">
+      <position x="12" y="0" />
+      <icon>basic\png\arrow487.png</icon>
+    </button>
+    <button id="btn13-0">
+      <position x="13" y="0" />
+      <icon>basic\png\arrow488.png</icon>
+    </button>
+    <button id="btn14-0">
+      <position x="14" y="0" />
+      <icon>basic\png\arrow489.png</icon>
+    </button>
+    <button id="btn0-1">
+      <position x="0" y="1" />
+      <icon>basic\png\arrow490.png</icon>
+    </button>
+    <button id="btn1-1">
+      <position x="1" y="1" />
+      <icon>basic\png\arrow491.png</icon>
+    </button>
+    <button id="btn2-1">
+      <position x="2" y="1" />
+      <icon>basic\png\arrow492.png</icon>
+    </button>
+    <button id="btn3-1">
+      <position x="3" y="1" />
+      <icon>basic\png\arrow493.png</icon>
+    </button>
+    <button id="btn4-1">
+      <position x="4" y="1" />
+      <icon>basic\png\arrow494.png</icon>
+    </button>
+    <button id="btn5-1">
+      <position x="5" y="1" />
+      <icon>basic\png\arrow495.png</icon>
+    </button>
+    <button id="btn6-1">
+      <position x="6" y="1" />
+      <icon>basic\png\arrow496.png</icon>
+    </button>
+    <button id="btn7-1">
+      <position x="7" y="1" />
+      <icon>basic\png\arrow497.png</icon>
+    </button>
+    <button id="btn8-1">
+      <position x="8" y="1" />
+      <icon>basic\png\arrow498.png</icon>
+    </button>
+    <button id="btn9-1">
+      <position x="9" y="1" />
+      <icon>basic\png\arrow499.png</icon>
+    </button>
+    <button id="btn10-1">
+      <position x="10" y="1" />
+      <icon>basic\png\arrow500.png</icon>
+    </button>
+    <button id="btn11-1">
+      <position x="11" y="1" />
+      <icon>basic\png\arrow501.png</icon>
+    </button>
+    <button id="btn12-1">
+      <position x="12" y="1" />
+      <icon>basic\png\arrow502.png</icon>
+    </button>
+    <button id="btn13-1">
+      <position x="13" y="1" />
+      <icon>basic\png\arrow503.png</icon>
+    </button>
+    <button id="btn14-1">
+      <position x="14" y="1" />
+      <icon>basic\png\arrow504.png</icon>
+    </button>
+    <button id="btn0-2">
+      <position x="0" y="2" />
+      <icon>basic\png\arrow505.png</icon>
+    </button>
+    <button id="btn1-2">
+      <position x="1" y="2" />
+      <icon>basic\png\arrow506.png</icon>
+    </button>
+    <button id="btn2-2">
+      <position x="2" y="2" />
+      <icon>basic\png\arrow507.png</icon>
+    </button>
+    <button id="btn3-2">
+      <position x="3" y="2" />
+      <icon>basic\png\arrow508.png</icon>
+    </button>
+    <button id="btn4-2">
+      <position x="4" y="2" />
+      <icon>basic\png\arrow510.png</icon>
+    </button>
+    <button id="btn5-2">
+      <position x="5" y="2" />
+      <icon>basic\png\arrow511.png</icon>
+    </button>
+    <button id="btn6-2">
+      <position x="6" y="2" />
+      <icon>basic\png\arrow514.png</icon>
+    </button>
+    <button id="btn7-2">
+      <position x="7" y="2" />
+      <icon>basic\png\arrow515.png</icon>
+    </button>
+    <button id="btn8-2">
+      <position x="8" y="2" />
+      <icon>basic\png\arrowhead7.png</icon>
+    </button>
+    <button id="btn9-2">
+      <position x="9" y="2" />
+      <icon>basic\png\arrowheads3.png</icon>
+    </button>
+    <button id="btn10-2">
+      <position x="10" y="2" />
+      <icon>basic\png\arrows64.png</icon>
+    </button>
+    <button id="btn11-2">
+      <position x="11" y="2" />
+      <icon>basic\png\arrows65.png</icon>
+    </button>
+    <button id="btn12-2">
+      <position x="12" y="2" />
+      <icon>basic\png\arrows66.png</icon>
+    </button>
+    <button id="btn13-2">
+      <position x="13" y="2" />
+      <icon>basic\png\arrows67.png</icon>
+    </button>
+    <button id="btn14-2">
+      <position x="14" y="2" />
+      <icon>basic\png\back14.png</icon>
+    </button>
+    <button id="btn0-3">
+      <position x="0" y="3" />
+      <icon>basic\png\barrier.png</icon>
+    </button>
+    <button id="btn1-3">
+      <position x="1" y="3" />
+      <icon>basic\png\barrier1.png</icon>
+    </button>
+    <button id="btn2-3">
+      <position x="2" y="3" />
+      <icon>basic\png\basic.png</icon>
+    </button>
+    <button id="btn3-3">
+      <position x="3" y="3" />
+      <icon>basic\png\basic1.png</icon>
+    </button>
+    <button id="btn4-3">
+      <position x="4" y="3" />
+      <icon>basic\png\bell16.png</icon>
+    </button>
+    <button id="btn5-3">
+      <position x="5" y="3" />
+      <icon>basic\png\biohazard1.png</icon>
+    </button>
+    <button id="btn6-3">
+      <position x="6" y="3" />
+      <icon>basic\png\blank22.png</icon>
+    </button>
+    <button id="btn7-3">
+      <position x="7" y="3" />
+      <icon>basic\png\book117.png</icon>
+    </button>
+    <button id="btn8-3">
+      <position x="8" y="3" />
+      <icon>basic\png\book118.png</icon>
+    </button>
+    <button id="btn9-3">
+      <position x="9" y="3" />
+      <icon>basic\png\book119.png</icon>
+    </button>
+    <button id="btn10-3">
+      <position x="10" y="3" />
+      <icon>basic\png\book121.png</icon>
+    </button>
+    <button id="btn11-3">
+      <position x="11" y="3" />
+      <icon>basic\png\book122.png</icon>
+    </button>
+    <button id="btn12-3">
+      <position x="12" y="3" />
+      <icon>basic\png\bookmark11.png</icon>
+    </button>
+    <button id="btn13-3">
+      <position x="13" y="3" />
+      <icon>basic\png\bookmarks.png</icon>
+    </button>
+    <button id="btn14-3">
+      <position x="14" y="3" />
+      <icon>basic\png\books13.png</icon>
+    </button>
+    <button id="btn0-4">
+      <position x="0" y="4" />
+      <icon>basic\png\braille1.png</icon>
+    </button>
+    <button id="btn1-4">
+      <position x="1" y="4" />
+      <icon>basic\png\broken21.png</icon>
+    </button>
+    <button id="btn2-4">
+      <position x="2" y="4" />
+      <icon>basic\png\buoy.png</icon>
+    </button>
+    <button id="btn3-4">
+      <position x="3" y="4" />
+      <icon>basic\png\calibration.png</icon>
+    </button>
+    <button id="btn4-4">
+      <position x="4" y="4" />
+      <icon>basic\png\candle4.png</icon>
+    </button>
+    <button id="btn5-4">
+      <position x="5" y="4" />
+      <icon>basic\png\candle5.png</icon>
+    </button>
+    <button id="btn6-4">
+      <position x="6" y="4" />
+      <icon>basic\png\cd18.png</icon>
+    </button>
+    <button id="btn7-4">
+      <position x="7" y="4" />
+      <icon>basic\png\cd19.png</icon>
+    </button>
+    <button id="btn8-4">
+      <position x="8" y="4" />
+      <icon>basic\png\cd20.png</icon>
+    </button>
+    <button id="btn9-4">
+      <position x="9" y="4" />
+      <icon>basic\png\cd21.png</icon>
+    </button>
+    <button id="btn10-4">
+      <position x="10" y="4" />
+      <icon>basic\png\cd22.png</icon>
+    </button>
+    <button id="btn11-4">
+      <position x="11" y="4" />
+      <icon>basic\png\cd23.png</icon>
+    </button>
+    <button id="btn12-4">
+      <position x="12" y="4" />
+      <icon>basic\png\check34.png</icon>
+    </button>
+    <button id="btn13-4">
+      <position x="13" y="4" />
+      <icon>basic\png\check35.png</icon>
+    </button>
+    <button id="btn14-4">
+      <position x="14" y="4" />
+      <icon>basic\png\checkered4.png</icon>
+    </button>
+    <button id="btn0-5">
+      <position x="0" y="5" />
+      <icon>basic\png\circle46.png</icon>
+    </button>
+    <button id="btn1-5">
+      <position x="1" y="5" />
+      <icon>basic\png\circle48.png</icon>
+    </button>
+    <button id="btn2-5">
+      <position x="2" y="5" />
+      <icon>basic\png\clipboard41.png</icon>
+    </button>
+    <button id="btn3-5">
+      <position x="3" y="5" />
+      <icon>basic\png\clipboard42.png</icon>
+    </button>
+    <button id="btn4-5">
+      <position x="4" y="5" />
+      <icon>basic\png\clipboard43.png</icon>
+    </button>
+    <button id="btn5-5">
+      <position x="5" y="5" />
+      <icon>basic\png\clipboard44.png</icon>
+    </button>
+    <button id="btn6-5">
+      <position x="6" y="5" />
+      <icon>basic\png\clipboard45.png</icon>
+    </button>
+    <button id="btn7-5">
+      <position x="7" y="5" />
+      <icon>basic\png\clipboard46.png</icon>
+    </button>
+    <button id="btn8-5">
+      <position x="8" y="5" />
+      <icon>basic\png\close20.png</icon>
+    </button>
+    <button id="btn9-5">
+      <position x="9" y="5" />
+      <icon>basic\png\closed42.png</icon>
+    </button>
+    <button id="btn10-5">
+      <position x="10" y="5" />
+      <icon>basic\png\compact12.png</icon>
+    </button>
+    <button id="btn11-5">
+      <position x="11" y="5" />
+      <icon>basic\png\copy12.png</icon>
+    </button>
+    <button id="btn12-5">
+      <position x="12" y="5" />
+      <icon>basic\png\cross54.png</icon>
+    </button>
+    <button id="btn13-5">
+      <position x="13" y="5" />
+      <icon>basic\png\crosshair8.png</icon>
+    </button>
+    <button id="btn14-5">
+      <position x="14" y="5" />
+      <icon>basic\png\curved14.png</icon>
+    </button>
+    <button id="btn0-6">
+      <position x="0" y="6" />
+      <icon>basic\png\cut20.png</icon>
+    </button>
+    <button id="btn1-6">
+      <position x="1" y="6" />
+      <icon>basic\png\delete30.png</icon>
+    </button>
+    <button id="btn2-6">
+      <position x="2" y="6" />
+      <icon>basic\png\delete31.png</icon>
+    </button>
+    <button id="btn3-6">
+      <position x="3" y="6" />
+      <icon>basic\png\dictionary.png</icon>
+    </button>
+    <button id="btn4-6">
+      <position x="4" y="6" />
+      <icon>basic\png\document65.png</icon>
+    </button>
+    <button id="btn5-6">
+      <position x="5" y="6" />
+      <icon>basic\png\document66.png</icon>
+    </button>
+    <button id="btn6-6">
+      <position x="6" y="6" />
+      <icon>basic\png\document67.png</icon>
+    </button>
+    <button id="btn7-6">
+      <position x="7" y="6" />
+      <icon>basic\png\document68.png</icon>
+    </button>
+    <button id="btn8-6">
+      <position x="8" y="6" />
+      <icon>basic\png\document69.png</icon>
+    </button>
+    <button id="btn9-6">
+      <position x="9" y="6" />
+      <icon>basic\png\document70.png</icon>
+    </button>
+    <button id="btn10-6">
+      <position x="10" y="6" />
+      <icon>basic\png\document71.png</icon>
+    </button>
+    <button id="btn11-6">
+      <position x="11" y="6" />
+      <icon>basic\png\document72.png</icon>
+    </button>
+    <button id="btn12-6">
+      <position x="12" y="6" />
+      <icon>basic\png\document73.png</icon>
+    </button>
+    <button id="btn13-6">
+      <position x="13" y="6" />
+      <icon>basic\png\document74.png</icon>
+    </button>
+    <button id="btn14-6">
+      <position x="14" y="6" />
+      <icon>basic\png\document75.png</icon>
+    </button>
+    <button id="btn0-7">
+      <position x="0" y="7" />
+      <icon>basic\png\document76.png</icon>
+    </button>
+    <button id="btn1-7">
+      <position x="1" y="7" />
+      <icon>basic\png\document77.png</icon>
+    </button>
+    <button id="btn2-7">
+      <position x="2" y="7" />
+      <icon>basic\png\document78.png</icon>
+    </button>
+    <button id="btn3-7">
+      <position x="3" y="7" />
+      <icon>basic\png\document79.png</icon>
+    </button>
+    <button id="btn4-7">
+      <position x="4" y="7" />
+      <icon>basic\png\document80.png</icon>
+    </button>
+    <button id="btn5-7">
+      <position x="5" y="7" />
+      <icon>basic\png\document81.png</icon>
+    </button>
+    <button id="btn6-7">
+      <position x="6" y="7" />
+      <icon>basic\png\document82.png</icon>
+    </button>
+    <button id="btn7-7">
+      <position x="7" y="7" />
+      <icon>basic\png\document83.png</icon>
+    </button>
+    <button id="btn8-7">
+      <position x="8" y="7" />
+      <icon>basic\png\document84.png</icon>
+    </button>
+    <button id="btn9-7">
+      <position x="9" y="7" />
+      <icon>basic\png\document85.png</icon>
+    </button>
+    <button id="btn10-7">
+      <position x="10" y="7" />
+      <icon>basic\png\document86.png</icon>
+    </button>
+    <button id="btn11-7">
+      <position x="11" y="7" />
+      <icon>basic\png\documents4.png</icon>
+    </button>
+    <button id="btn12-7">
+      <position x="12" y="7" />
+      <icon>basic\png\documents5.png</icon>
+    </button>
+    <button id="btn13-7">
+      <position x="13" y="7" />
+      <icon>basic\png\documents6.png</icon>
+    </button>
+    <button id="btn14-7">
+      <position x="14" y="7" />
+      <icon>basic\png\door13.png</icon>
+    </button>
+    <button id="btn0-8">
+      <position x="0" y="8" />
+      <icon>basic\png\double47.png</icon>
+    </button>
+    <button id="btn1-8">
+      <position x="1" y="8" />
+      <icon>basic\png\edit26.png</icon>
+    </button>
+    <button id="btn2-8">
+      <position x="2" y="8" />
+      <icon>basic\png\equalizer16.png</icon>
+    </button>
+    <button id="btn3-8">
+      <position x="3" y="8" />
+      <icon>basic\png\escalator2.png</icon>
+    </button>
+    <button id="btn4-8">
+      <position x="4" y="8" />
+      <icon>basic\png\escalator3.png</icon>
+    </button>
+    <button id="btn5-8">
+      <position x="5" y="8" />
+      <icon>basic\png\escalator4.png</icon>
+    </button>
+    <button id="btn6-8">
+      <position x="6" y="8" />
+      <icon>basic\png\female128.png</icon>
+    </button>
+    <button id="btn7-8">
+      <position x="7" y="8" />
+      <icon>basic\png\find.png</icon>
+    </button>
+    <button id="btn8-8">
+      <position x="8" y="8" />
+      <icon>basic\png\find1.png</icon>
+    </button>
+    <button id="btn9-8">
+      <position x="9" y="8" />
+      <icon>basic\png\find2.png</icon>
+    </button>
+    <button id="btn10-8">
+      <position x="10" y="8" />
+      <icon>basic\png\first19.png</icon>
+    </button>
+    <button id="btn11-8">
+      <position x="11" y="8" />
+      <icon>basic\png\fit.png</icon>
+    </button>
+    <button id="btn12-8">
+      <position x="12" y="8" />
+      <icon>basic\png\fit2.png</icon>
+    </button>
+    <button id="btn13-8">
+      <position x="13" y="8" />
+      <icon>basic\png\flag30.png</icon>
+    </button>
+    <button id="btn14-8">
+      <position x="14" y="8" />
+      <icon>basic\png\floppy13.png</icon>
+    </button>
+    <button id="btn0-9">
+      <position x="0" y="9" />
+      <icon>basic\png\floppy14.png</icon>
+    </button>
+    <button id="btn1-9">
+      <position x="1" y="9" />
+      <icon>basic\png\floppy15.png</icon>
+    </button>
+    <button id="btn2-9">
+      <position x="2" y="9" />
+      <icon>basic\png\floppy16.png</icon>
+    </button>
+    <button id="btn3-9">
+      <position x="3" y="9" />
+      <icon>basic\png\floppy18.png</icon>
+    </button>
+    <button id="btn4-9">
+      <position x="4" y="9" />
+      <icon>basic\png\folder78.png</icon>
+    </button>
+    <button id="btn5-9">
+      <position x="5" y="9" />
+      <icon>basic\png\folder79.png</icon>
+    </button>
+    <button id="btn6-9">
+      <position x="6" y="9" />
+      <icon>basic\png\folder80.png</icon>
+    </button>
+    <button id="btn7-9">
+      <position x="7" y="9" />
+      <icon>basic\png\folder81.png</icon>
+    </button>
+    <button id="btn8-9">
+      <position x="8" y="9" />
+      <icon>basic\png\folder82.png</icon>
+    </button>
+    <button id="btn9-9">
+      <position x="9" y="9" />
+      <icon>basic\png\folder83.png</icon>
+    </button>
+    <button id="btn10-9">
+      <position x="10" y="9" />
+      <icon>basic\png\folder84.png</icon>
+    </button>
+    <button id="btn11-9">
+      <position x="11" y="9" />
+      <icon>basic\png\folder85.png</icon>
+    </button>
+    <button id="btn12-9">
+      <position x="12" y="9" />
+      <icon>basic\png\folder86.png</icon>
+    </button>
+    <button id="btn13-9">
+      <position x="13" y="9" />
+      <icon>basic\png\folders3.png</icon>
+    </button>
+    <button id="btn14-9">
+      <position x="14" y="9" />
+      <icon>basic\png\folders4.png</icon>
+    </button>
+  </grid>
+</keyboard>

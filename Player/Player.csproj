@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{C9D09614-965D-4295-B058-16D8EDA57138}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>Player</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Player</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog">
+      <HintPath>packages\NLog.3.2.0.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg">
+      <HintPath>packages\Svg.1.7.0\lib\Svg.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="config.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Core\Gui\README.md" />
+    <None Include="keyboard.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conf\Build\ConfigBuilder.cs" />
+    <Compile Include="Conf\Build\GlobalConfigImpl.cs" />
+    <Compile Include="Conf\Build\ScannerConfigImpl.cs" />
+    <Compile Include="Conf\Config.cs" />
+    <Compile Include="Conf\ConfigException.cs" />
+    <Compile Include="Conf\GlobalConfig.cs" />
+    <Compile Include="Conf\NotInitializedException.cs" />
+    <Compile Include="Conf\ScannerConfig.cs" />
+    <Compile Include="Conf\Tags.cs" />
+    <Compile Include="Core\Action\ActionController.cs" />
+    <Compile Include="Core\Action\ActionFactory.cs" />
+    <Compile Include="Core\Action\BaseAction.cs" />
+    <Compile Include="Core\Action\IAction.cs" />
+    <Compile Include="Core\Action\LogAction.cs" />
+    <Compile Include="Core\Action\ScannerAction.cs" />
+    <Compile Include="Core\Action\SelectAction.cs" />
+    <Compile Include="Core\Action\SwitchGridAction.cs" />
+    <Compile Include="Core\Action\TcpAction.cs" />
+    <Compile Include="Core\Action\TimeAction.cs" />
+    <Compile Include="Core\Action\TTSAction.cs" />
+    <Compile Include="Core\Controller.cs" />
+    <Compile Include="Core\Element\Button.cs" />
+    <Compile Include="Core\Element\Grid.cs" />
+    <Compile Include="Core\Element\GridBuilder.cs" />
+    <Compile Include="Core\Element\Keyboard.cs" />
+    <Compile Include="Core\Element\KeyboardBuilder.cs" />
+    <Compile Include="Core\Element\KeyboardBuilderFactory.cs" />
+    <Compile Include="Core\Element\KeyboardDevBuilder.cs" />
+    <Compile Include="Core\Element\KeyboardFileBuilder.cs" />
+    <Compile Include="Core\GridSwitchEventArgs.cs" />
+    <Compile Include="Core\Gui\ClickEventArgs.cs" />
+    <Compile Include="Core\Gui\Drawer.cs" />
+    <Compile Include="Core\Gui\MouseChangeEventArgs.cs" />
+    <Compile Include="Core\Gui\PlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Gui\PlayerForm.Designer.cs">
+      <DependentUpon>PlayerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Gui\RedrawEventArgs.cs" />
+    <Compile Include="Core\Net\TcpConnectionPool.cs" />
+    <Compile Include="Core\Net\TcpDestination.cs" />
+    <Compile Include="Core\Net\TcpServer.cs" />
+    <Compile Include="Core\Net\TcpSink.cs" />
+    <Compile Include="Core\Scan\BaseScanner.cs" />
+    <Compile Include="Core\Scan\ButtonPressEventArgs.cs" />
+    <Compile Include="Core\Scan\ColumnRowBaseScanner.cs" />
+    <Compile Include="Core\Scan\ColumnRowScanner.cs" />
+    <Compile Include="Core\Scan\LinearScanner.cs" />
+    <Compile Include="Core\Scan\RowColumnScanner.cs" />
+    <Compile Include="Core\Scan\Scanner.cs" />
+    <Compile Include="Core\Scan\ScannerFactory.cs" />
+    <Compile Include="Core\Scan\SelectionEventArgs.cs" />
+    <Compile Include="Core\Scan\TestScanner.cs" />
+    <Compile Include="Core\Status\ButtonStatus.cs" />
+    <Compile Include="Core\Status\ButtonStatusImpl.cs" />
+    <Compile Include="Core\Status\GridStatus.cs" />
+    <Compile Include="Core\Status\GridStatusImpl.cs" />
+    <Compile Include="Core\Status\StatusChangeEventArgs.cs" />
+    <Compile Include="Core\Status\StatusController.cs" />
+    <Compile Include="Core\Trigger\BaseTrigger.cs" />
+    <Compile Include="Core\Trigger\ClickTrigger.cs" />
+    <Compile Include="Core\Trigger\KeyTrigger.cs" />
+    <Compile Include="Core\Trigger\Trigger.cs" />
+    <Compile Include="Core\Trigger\TriggerEventArgs.cs" />
+    <Compile Include="Draw\Button\AlignedDrawer.cs" />
+    <Compile Include="Draw\Button\BorderDrawer.cs" />
+    <Compile Include="Draw\Button\ButtonBaseDrawer.cs" />
+    <Compile Include="Draw\Button\SimpleIconDrawer.cs" />
+    <Compile Include="Draw\Button\SimpleTextDrawer.cs" />
+    <Compile Include="Draw\DrawerFactory.cs" />
+    <Compile Include="Draw\Element\DrawableButton.cs" />
+    <Compile Include="Draw\Element\DrawableGrid.cs" />
+    <Compile Include="Draw\Element\DrawableIcon.cs" />
+    <Compile Include="Draw\Event\ClickEventArgsImpl.cs" />
+    <Compile Include="Draw\Event\MouseChangeEventArgsImpl.cs" />
+    <Compile Include="Draw\Event\RedrawEventArgsImpl.cs" />
+    <Compile Include="Draw\Grid\GridBaseDrawer.cs" />
+    <Compile Include="Draw\Grid\GridBorderDrawer.cs" />
+    <Compile Include="Draw\Grid\GridBorderGapDrawer.cs" />
+    <Compile Include="Draw\Grid\GridBorderMarginDrawer.cs" />
+    <Compile Include="Draw\Grid\SimpleGridDrawer.cs" />
+    <Compile Include="Load\Creator.cs" />
+    <Compile Include="Load\Element\Button.cs" />
+    <Compile Include="Load\Element\Grid.cs" />
+    <Compile Include="Load\Element\Icon.cs" />
+    <Compile Include="Load\Element\Keyboard.cs" />
+    <Compile Include="Load\Element\KeyboardElement.cs" />
+    <Compile Include="Load\Element\ScannerParam.cs" />
+    <Compile Include="Load\Element\Style.cs" />
+    <Compile Include="Load\Element\TcpDestination.cs" />
+    <Compile Include="Load\KeyboardLoader.cs" />
+    <Compile Include="Load\Loader.cs" />
+    <Compile Include="Load\LoaderException.cs" />
+    <Compile Include="Load\LoaderFactory.cs" />
+    <Compile Include="Load\Parse\BaseParser.cs" />
+    <Compile Include="Load\Parse\ButtonParser.cs" />
+    <Compile Include="Load\Parse\KeyboardParser.cs" />
+    <Compile Include="Load\Parse\StyleParser.cs" />
+    <Compile Include="Load\XmlSchemaValidator.cs" />
+    <Compile Include="Model\Action\ActionParameter.cs" />
+    <Compile Include="Model\Action\BaseActionParameter.cs" />
+    <Compile Include="Model\Action\LogActionParameter.cs" />
+    <Compile Include="Model\Action\OpenKeyboardActionParameter.cs" />
+    <Compile Include="Model\Action\ScannerActionParameter.cs" />
+    <Compile Include="Model\Action\SelectActionParameter.cs" />
+    <Compile Include="Model\Action\SwitchGridActionParameter.cs" />
+    <Compile Include="Model\Action\TcpActionParameter.cs" />
+    <Compile Include="Model\Action\TimeActionParameter.cs" />
+    <Compile Include="Model\Action\TTSActionParameter.cs" />
+    <Compile Include="Model\ButtonEnums.cs" />
+    <Compile Include="Model\ButtonGroup.cs" />
+    <Compile Include="Model\ButtonIcon.cs" />
+    <Compile Include="Model\ButtonModel.cs" />
+    <Compile Include="Model\ButtonPosition.cs" />
+    <Compile Include="Model\ButtonText.cs" />
+    <Compile Include="Model\GeneralStyle.cs" />
+    <Compile Include="Model\GridModel.cs" />
+    <Compile Include="Model\KeyboardModel.cs" />
+    <Compile Include="Model\ScannerParameter.cs" />
+    <Compile Include="Model\TcpDestinationModel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Util\ExceptionUtil.cs" />
+    <Compile Include="Util\XmlUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Core\Gui\PlayerForm.resx">
+      <DependentUpon>PlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

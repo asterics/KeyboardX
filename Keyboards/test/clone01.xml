@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Test cloning of a button.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+
+  <default>
+    <scanner>
+      <active>false</active>
+    </scanner>
+  </default>
+
+  <grid id="g1">
+    <dimension cols="2" rows="1" />
+    <button id="b1">
+      <position x="0" y="0" />
+      <icon>basic/png/copy12.png</icon>
+      <text alignment="top">i'm real</text>
+      <style>
+        <buttonBackColor>#00f</buttonBackColor>
+        <buttonFontColor>#000</buttonFontColor>
+      </style>
+    </button>
+    <button id="b2">
+      <position x="1" y="0" />
+      <clone button="b1" />
+    </button>    
+  </grid>
+  
+</keyboard>

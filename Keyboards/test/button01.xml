@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Testing empty buttons a lot.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  
+  <default>
+    <scanner>
+      <active>true</active>
+      <startLeft>true</startLeft>
+      <startTop>true</startTop>
+      <moveHorizontal>true</moveHorizontal>
+    </scanner>
+  </default>
+
+  <!-- one button with empty around, linear -->
+  <grid id="g01">
+    <scanner>
+      <type>linear</type>
+    </scanner>
+    <dimension cols="3" rows="3" />
+    <button id="g1_btn1-1">
+      <position x="1" y="1" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g02" />
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on even, row-column left top -->
+  <grid id="g02">
+    <scanner>
+      <type>row-column</type>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g02_btn0-0">
+      <position x="0" y="0" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g03" />
+    </button>
+    <button id="g02_btn2-0">
+      <position x="2" y="0" />
+      <text>btn2-0</text>
+    </button>
+    <button id="g02_btn4-0">
+      <position x="4" y="0" />
+      <text>btn4-0</text>
+    </button>
+    <button id="g02_btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+    </button>
+    <button id="g02_btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+    </button>
+    <button id="g02_btn4-2">
+      <position x="4" y="2" />
+      <text>btn4-2</text>
+    </button>
+    <button id="g02_btn0-4">
+      <position x="0" y="4" />
+      <text>btn0-4</text>
+    </button>
+    <button id="g02_btn2-4">
+      <position x="2" y="4" />
+      <text>btn2-4</text>
+    </button>
+    <button id="g02_btn4-4">
+      <position x="4" y="4" />
+      <text>btn4-4</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on even, row-column right top -->
+  <grid id="g03">
+    <scanner>
+      <type>row-column</type>
+      <startLeft>false</startLeft>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g03_btn0-0">
+      <position x="0" y="0" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g04" />
+    </button>
+    <button id="g03_btn2-0">
+      <position x="2" y="0" />
+      <text>btn2-0</text>
+    </button>
+    <button id="g03_btn4-0">
+      <position x="4" y="0" />
+      <text>btn4-0</text>
+    </button>
+    <button id="g03_btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+    </button>
+    <button id="g03_btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+    </button>
+    <button id="g03_btn4-2">
+      <position x="4" y="2" />
+      <text>btn4-2</text>
+    </button>
+    <button id="g03_btn0-4">
+      <position x="0" y="4" />
+      <text>btn0-4</text>
+    </button>
+    <button id="g03_btn2-4">
+      <position x="2" y="4" />
+      <text>btn2-4</text>
+    </button>
+    <button id="g03_btn4-4">
+      <position x="4" y="4" />
+      <text>btn4-4</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on even, row-column left bottom -->
+  <grid id="g04">
+    <scanner>
+      <type>row-column</type>
+      <startTop>false</startTop>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g04_btn0-0">
+      <position x="0" y="0" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g05" />
+    </button>
+    <button id="g04_btn2-0">
+      <position x="2" y="0" />
+      <text>btn2-0</text>
+    </button>
+    <button id="g04_btn4-0">
+      <position x="4" y="0" />
+      <text>btn4-0</text>
+    </button>
+    <button id="g04_btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+    </button>
+    <button id="g04_btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+    </button>
+    <button id="g04_btn4-2">
+      <position x="4" y="2" />
+      <text>btn4-2</text>
+    </button>
+    <button id="g04_btn0-4">
+      <position x="0" y="4" />
+      <text>btn0-4</text>
+    </button>
+    <button id="g04_btn2-4">
+      <position x="2" y="4" />
+      <text>btn2-4</text>
+    </button>
+    <button id="g04_btn4-4">
+      <position x="4" y="4" />
+      <text>btn4-4</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on even, row-column right bottom -->
+  <grid id="g05">
+    <scanner>
+      <type>row-column</type>
+      <startLeft>false</startLeft>
+      <startTop>false</startTop>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g05_btn0-0">
+      <position x="0" y="0" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g06" />
+    </button>
+    <button id="g05_btn2-0">
+      <position x="2" y="0" />
+      <text>btn2-0</text>
+    </button>
+    <button id="g05_btn4-0">
+      <position x="4" y="0" />
+      <text>btn4-0</text>
+    </button>
+    <button id="g05_btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+    </button>
+    <button id="g05_btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+    </button>
+    <button id="g05_btn4-2">
+      <position x="4" y="2" />
+      <text>btn4-2</text>
+    </button>
+    <button id="g05_btn0-4">
+      <position x="0" y="4" />
+      <text>btn0-4</text>
+    </button>
+    <button id="g05_btn2-4">
+      <position x="2" y="4" />
+      <text>btn2-4</text>
+    </button>
+    <button id="g05_btn4-4">
+      <position x="4" y="4" />
+      <text>btn4-4</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on even, column-row left top -->
+  <grid id="g06">
+    <scanner>
+      <type>column-row</type>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g06_btn0-0">
+      <position x="0" y="0" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g07" />
+    </button>
+    <button id="g06_btn2-0">
+      <position x="2" y="0" />
+      <text>btn2-0</text>
+    </button>
+    <button id="g06_btn4-0">
+      <position x="4" y="0" />
+      <text>btn4-0</text>
+    </button>
+    <button id="g06_btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+    </button>
+    <button id="g06_btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+    </button>
+    <button id="g06_btn4-2">
+      <position x="4" y="2" />
+      <text>btn4-2</text>
+    </button>
+    <button id="g06_btn0-4">
+      <position x="0" y="4" />
+      <text>btn0-4</text>
+    </button>
+    <button id="g06_btn2-4">
+      <position x="2" y="4" />
+      <text>btn2-4</text>
+    </button>
+    <button id="g06_btn4-4">
+      <position x="4" y="4" />
+      <text>btn4-4</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on even, column-row right top -->
+  <grid id="g07">
+    <scanner>
+      <type>column-row</type>
+      <startLeft>false</startLeft>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g07_btn0-0">
+      <position x="0" y="0" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g08" />
+    </button>
+    <button id="g07_btn2-0">
+      <position x="2" y="0" />
+      <text>btn2-0</text>
+    </button>
+    <button id="g07_btn4-0">
+      <position x="4" y="0" />
+      <text>btn4-0</text>
+    </button>
+    <button id="g07_btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+    </button>
+    <button id="g07_btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+    </button>
+    <button id="g07_btn4-2">
+      <position x="4" y="2" />
+      <text>btn4-2</text>
+    </button>
+    <button id="g07_btn0-4">
+      <position x="0" y="4" />
+      <text>btn0-4</text>
+    </button>
+    <button id="g07_btn2-4">
+      <position x="2" y="4" />
+      <text>btn2-4</text>
+    </button>
+    <button id="g07_btn4-4">
+      <position x="4" y="4" />
+      <text>btn4-4</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on even, column-row left bottom -->
+  <grid id="g08">
+    <scanner>
+      <type>column-row</type>
+      <startTop>false</startTop>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g08_btn0-0">
+      <position x="0" y="0" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g09" />
+    </button>
+    <button id="g08_btn2-0">
+      <position x="2" y="0" />
+      <text>btn2-0</text>
+    </button>
+    <button id="g08_btn4-0">
+      <position x="4" y="0" />
+      <text>btn4-0</text>
+    </button>
+    <button id="g08_btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+    </button>
+    <button id="g08_btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+    </button>
+    <button id="g08_btn4-2">
+      <position x="4" y="2" />
+      <text>btn4-2</text>
+    </button>
+    <button id="g08_btn0-4">
+      <position x="0" y="4" />
+      <text>btn0-4</text>
+    </button>
+    <button id="g08_btn2-4">
+      <position x="2" y="4" />
+      <text>btn2-4</text>
+    </button>
+    <button id="g08_btn4-4">
+      <position x="4" y="4" />
+      <text>btn4-4</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on even, column-row right bottom -->
+  <grid id="g09">
+    <scanner>
+      <type>column-row</type>
+      <startLeft>false</startLeft>
+      <startTop>false</startTop>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g09_btn0-0">
+      <position x="0" y="0" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g10" />
+    </button>
+    <button id="g09_btn2-0">
+      <position x="2" y="0" />
+      <text>btn2-0</text>
+    </button>
+    <button id="g09_btn4-0">
+      <position x="4" y="0" />
+      <text>btn4-0</text>
+    </button>
+    <button id="g09_btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+    </button>
+    <button id="g09_btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+    </button>
+    <button id="g09_btn4-2">
+      <position x="4" y="2" />
+      <text>btn4-2</text>
+    </button>
+    <button id="g09_btn0-4">
+      <position x="0" y="4" />
+      <text>btn0-4</text>
+    </button>
+    <button id="g09_btn2-4">
+      <position x="2" y="4" />
+      <text>btn2-4</text>
+    </button>
+    <button id="g09_btn4-4">
+      <position x="4" y="4" />
+      <text>btn4-4</text>
+    </button>
+  </grid>
+  
+    <!-- 5x5 buttons on even, linear left top horizontal -->
+  <grid id="g10">
+    <scanner>
+      <type>linear</type>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g10_btn0-0">
+      <position x="0" y="0" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g11" />
+    </button>
+    <button id="g10_btn2-0">
+      <position x="2" y="0" />
+      <text>btn2-0</text>
+    </button>
+    <button id="g10_btn4-0">
+      <position x="4" y="0" />
+      <text>btn4-0</text>
+    </button>
+    <button id="g10_btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+    </button>
+    <button id="g10_btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+    </button>
+    <button id="g10_btn4-2">
+      <position x="4" y="2" />
+      <text>btn4-2</text>
+    </button>
+    <button id="g10_btn0-4">
+      <position x="0" y="4" />
+      <text>btn0-4</text>
+    </button>
+    <button id="g10_btn2-4">
+      <position x="2" y="4" />
+      <text>btn2-4</text>
+    </button>
+    <button id="g10_btn4-4">
+      <position x="4" y="4" />
+      <text>btn4-4</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on even, linear right bottom vertical -->
+  <grid id="g11">
+    <scanner>
+      <type>linear</type>
+      <startLeft>false</startLeft>
+      <startTop>false</startTop>
+      <moveHorizontal>false</moveHorizontal>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g11_btn0-0">
+      <position x="0" y="0" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g12" />
+    </button>
+    <button id="g11_btn2-0">
+      <position x="2" y="0" />
+      <text>btn2-0</text>
+    </button>
+    <button id="g11_btn4-0">
+      <position x="4" y="0" />
+      <text>btn4-0</text>
+    </button>
+    <button id="g11_btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+    </button>
+    <button id="g11_btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+    </button>
+    <button id="g11_btn4-2">
+      <position x="4" y="2" />
+      <text>btn4-2</text>
+    </button>
+    <button id="g11_btn0-4">
+      <position x="0" y="4" />
+      <text>btn0-4</text>
+    </button>
+    <button id="g11_btn2-4">
+      <position x="2" y="4" />
+      <text>btn2-4</text>
+    </button>
+    <button id="g11_btn4-4">
+      <position x="4" y="4" />
+      <text>btn4-4</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on odd, row-column left top -->
+  <grid id="g12">
+    <scanner>
+      <type>row-column</type>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g12_btn1-1">
+      <position x="1" y="1" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g13" />
+    </button>
+    <button id="g12_btn3-1">
+      <position x="3" y="1" />
+      <text>btn3-1</text>
+    </button>
+    <button id="g12_btn1-3">
+      <position x="1" y="3" />
+      <text>btn1-3</text>
+    </button>
+    <button id="g12_btn3-3">
+      <position x="3" y="3" />
+      <text>btn3-3</text>
+    </button>
+  </grid>
+  
+  <!-- 5x5 buttons on odd, row-column right top -->
+  <grid id="g13">
+    <scanner>
+      <type>row-column</type>
+      <startLeft>false</startLeft>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g13_btn1-1">
+      <position x="1" y="1" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g14" />
+    </button>
+    <button id="g13_btn3-1">
+      <position x="3" y="1" />
+      <text>btn3-1</text>
+    </button>
+    <button id="g13_btn1-3">
+      <position x="1" y="3" />
+      <text>btn1-3</text>
+    </button>
+    <button id="g13_btn3-3">
+      <position x="3" y="3" />
+      <text>btn3-3</text>
+    </button>
+  </grid>
+  
+  <!-- 5x5 buttons on odd, row-column left bottom -->
+  <grid id="g14">
+    <scanner>
+      <type>row-column</type>
+      <startTop>false</startTop>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g14_btn1-1">
+      <position x="1" y="1" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g15" />
+    </button>
+    <button id="g14_btn3-1">
+      <position x="3" y="1" />
+      <text>btn3-1</text>
+    </button>
+    <button id="g14_btn1-3">
+      <position x="1" y="3" />
+      <text>btn1-3</text>
+    </button>
+    <button id="g14_btn3-3">
+      <position x="3" y="3" />
+      <text>btn3-3</text>
+    </button>
+  </grid>
+  
+  <!-- 5x5 buttons on odd, row-column right bottom -->
+  <grid id="g15">
+    <scanner>
+      <type>row-column</type>
+      <startLeft>false</startLeft>
+      <startTop>false</startTop>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g15_btn1-1">
+      <position x="1" y="1" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g16" />
+    </button>
+    <button id="g15_btn3-1">
+      <position x="3" y="1" />
+      <text>btn3-1</text>
+    </button>
+    <button id="g15_btn1-3">
+      <position x="1" y="3" />
+      <text>btn1-3</text>
+    </button>
+    <button id="g15_btn3-3">
+      <position x="3" y="3" />
+      <text>btn3-3</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on odd, column-row left top -->
+  <grid id="g16">
+    <scanner>
+      <type>column-row</type>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g16_btn1-1">
+      <position x="1" y="1" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g17" />
+    </button>
+    <button id="g16_btn3-1">
+      <position x="3" y="1" />
+      <text>btn3-1</text>
+    </button>
+    <button id="g16_btn1-3">
+      <position x="1" y="3" />
+      <text>btn1-3</text>
+    </button>
+    <button id="g16_btn3-3">
+      <position x="3" y="3" />
+      <text>btn3-3</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on odd, column-row right top -->
+  <grid id="g17">
+    <scanner>
+      <type>column-row</type>
+      <startLeft>false</startLeft>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g17_btn1-1">
+      <position x="1" y="1" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g18" />
+    </button>
+    <button id="g17_btn3-1">
+      <position x="3" y="1" />
+      <text>btn3-1</text>
+    </button>
+    <button id="g17_btn1-3">
+      <position x="1" y="3" />
+      <text>btn1-3</text>
+    </button>
+    <button id="g17_btn3-3">
+      <position x="3" y="3" />
+      <text>btn3-3</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on odd, column-row left bottom -->
+  <grid id="g18">
+    <scanner>
+      <type>column-row</type>
+      <startTop>false</startTop>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g18_btn1-1">
+      <position x="1" y="1" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g19" />
+    </button>
+    <button id="g18_btn3-1">
+      <position x="3" y="1" />
+      <text>btn3-1</text>
+    </button>
+    <button id="g18_btn1-3">
+      <position x="1" y="3" />
+      <text>btn1-3</text>
+    </button>
+    <button id="g18_btn3-3">
+      <position x="3" y="3" />
+      <text>btn3-3</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on odd, column-row right bottom -->
+  <grid id="g19">
+    <scanner>
+      <type>column-row</type>
+      <startLeft>false</startLeft>
+      <startTop>false</startTop>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g19_btn1-1">
+      <position x="1" y="1" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g20" />
+    </button>
+    <button id="g19_btn3-1">
+      <position x="3" y="1" />
+      <text>btn3-1</text>
+    </button>
+    <button id="g19_btn1-3">
+      <position x="1" y="3" />
+      <text>btn1-3</text>
+    </button>
+    <button id="g19_btn3-3">
+      <position x="3" y="3" />
+      <text>btn3-3</text>
+    </button>
+  </grid>
+
+  <!-- 5x5 buttons on odd, linear left top horizontal -->
+  <grid id="g20">
+    <scanner>
+      <type>linear</type>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g20_btn1-1">
+      <position x="1" y="1" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g21" />
+    </button>
+    <button id="g20_btn3-1">
+      <position x="3" y="1" />
+      <text>btn3-1</text>
+    </button>
+    <button id="g20_btn1-3">
+      <position x="1" y="3" />
+      <text>btn1-3</text>
+    </button>
+    <button id="g20_btn3-3">
+      <position x="3" y="3" />
+      <text>btn3-3</text>
+    </button>
+  </grid>
+  
+  <!-- 5x5 buttons on odd, linear right bottom vertical -->
+  <grid id="g21">
+    <scanner>
+      <type>linear</type>
+      <startLeft>false</startLeft>
+      <startTop>false</startTop>
+      <moveHorizontal>false</moveHorizontal>
+    </scanner>
+    <dimension cols="5" rows="5" />
+    <button id="g21_btn1-1">
+      <position x="1" y="1" />
+      <text>next</text>
+      <action xsi:type="switch" grid="g01" />
+    </button>
+    <button id="g21_btn3-1">
+      <position x="3" y="1" />
+      <text>btn3-1</text>
+    </button>
+    <button id="g21_btn1-3">
+      <position x="1" y="3" />
+      <text>btn1-3</text>
+    </button>
+    <button id="g21_btn3-3">
+      <position x="3" y="3" />
+      <text>btn3-3</text>
+    </button>
+  </grid>
+  
+</keyboard>

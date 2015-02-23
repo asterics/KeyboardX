@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:t="http://www.jku.at/iis/something"
+    targetNamespace="http://www.jku.at/iis/something"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="20141222"
+>
+  <xs:element name="keyboard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="default" minOccurs="0">
+          <xs:complexType>
+            <xs:group ref="defaultGroup" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="grid" type="gridType" minOccurs="1" maxOccurs="unbounded">
+          <xs:key name="buttonKey">
+            <xs:selector xpath="t:button" />
+            <xs:field xpath="@id" />
+          </xs:key>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" type="keyboardVersion" />
+    </xs:complexType>
+    <xs:key name="gridKey">
+      <xs:selector xpath="t:grid" />
+      <xs:field xpath="@id" />
+    </xs:key>
+  </xs:element>
+  <xs:simpleType name="keyboardVersion">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:pattern value="2\d[1-9](4(12(1[8|9]|2\d|3[01]))|[5-9](0\d|1[0-2])([0-2]\d|3[01]))" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:group name="defaultGroup">
+    <xs:sequence>
+      <xs:element name="scanner" type="scannerType" minOccurs="0" />
+      <xs:element name="style" type="gridStyleType" minOccurs="0" />
+      <xs:element name="tcpDestination" type="tcpDestinationType" minOccurs="0" />
+    </xs:sequence>
+  </xs:group>
+  <xs:complexType name="scannerType">
+    <xs:sequence>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" />
+      <xs:element name="type" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="column-row" />
+            <xs:enumeration value="linear" />
+            <xs:enumeration value="row-column" />
+            <xs:enumeration value="test" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="initialScanDelay" type="xs:nonNegativeInteger" minOccurs="0" />
+      <xs:element name="inputAcceptanceTime" type="xs:nonNegativeInteger" minOccurs="0" />
+      <xs:element name="postAcceptanceDelay" type="xs:nonNegativeInteger" minOccurs="0" />
+      <xs:element name="postInputAcceptanceTime" type="xs:nonNegativeInteger" minOccurs="0" />
+      <xs:element name="scanTime" type="xs:nonNegativeInteger" minOccurs="0" />
+      <xs:element name="startLeft" type="xs:boolean" minOccurs="0" />
+      <xs:element name="startTop" type="xs:boolean" minOccurs="0" />
+      <xs:element name="moveHorizontal" type="xs:boolean" minOccurs="0" />
+      <xs:element name="localCycleLimit" type="xs:nonNegativeInteger" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gridStyleType">
+    <xs:complexContent>
+      <xs:extension base="buttonStyleType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="drawer">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="border" />
+                <xs:enumeration value="border-gap" />
+                <xs:enumeration value="border-margin" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="gridBackColor" type="colorType" />
+          <xs:element name="gridBorderColor" type="colorType" />
+          <xs:element name="selectColor" type="colorType" />
+          <xs:element name="mouseColor" type="colorType" />
+          <xs:element name="borderWidth" type="xs:positiveInteger" />
+          <xs:element name="marginWidth" type="xs:positiveInteger" />
+          <xs:element name="gapWidth" type="xs:positiveInteger" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="buttonStyleType">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="buttonBackColor" type="colorType" />
+      <xs:element name="buttonBorderColor" type="colorType" />
+      <xs:element name="buttonFontColor" type="colorType" />
+      <xs:element name="buttonFontSize" type="xs:positiveInteger" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="tcpDestinationType">
+    <xs:sequence>
+      <xs:element name="host" type="xs:string" />
+      <xs:element name="port" type="xs:positiveInteger" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+  </xs:complexType>
+  <xs:complexType name="gridType">
+    <xs:sequence>
+      <xs:group ref="defaultGroup" />
+      <xs:element name="dimension" type="gridDimensionType" />
+      <xs:element name="button" type="buttonType" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:NCName" use="required" />
+    <xs:attribute name="default" type="xs:boolean" />
+  </xs:complexType>
+  <xs:complexType name="gridDimensionType">
+    <xs:attribute name="cols" type="xs:positiveInteger" use="required" />
+    <xs:attribute name="rows" type="xs:positiveInteger" use="required" />
+  </xs:complexType>
+  <xs:complexType name="buttonType">
+    <xs:sequence>
+      <xs:element name="position" type="positionType" />
+      <xs:choice>
+        <xs:element name="clone" type="buttonCloneType">
+          <xs:keyref name="cloneButtonRef" refer="buttonKey">
+            <xs:selector xpath="." />
+            <xs:field xpath="@button" />
+          </xs:keyref>
+        </xs:element>
+        <xs:sequence>
+          <xs:choice>
+            <xs:group ref="buttonContentGroup" />
+            <xs:group ref="buttonStateGroup" />
+          </xs:choice>
+        </xs:sequence>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:NCName" use="required" />
+  </xs:complexType>
+  <xs:complexType name="positionType">
+    <xs:attribute name="x" type="xs:nonNegativeInteger" use="required" />
+    <xs:attribute name="y" type="xs:nonNegativeInteger" use="required" />
+    <xs:attribute name="dimX" type="xs:positiveInteger" />
+    <xs:attribute name="dimY" type="xs:positiveInteger" />
+  </xs:complexType>
+  <xs:complexType name="buttonCloneType">
+    <xs:attribute name="button" type="xs:NCName" use="required" />
+  </xs:complexType>
+  <xs:group name="buttonContentGroup">
+    <xs:sequence>
+      <xs:choice>
+        <xs:sequence>
+          <xs:element ref="icon" />
+          <xs:element ref="text" minOccurs="0" />
+        </xs:sequence>
+        <xs:sequence>
+          <xs:element ref="text" />
+        </xs:sequence>
+      </xs:choice>
+      <xs:element name="style" type="buttonStyleType" minOccurs="0" />
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="action" type="actionType">
+          <xs:keyref name="switchGridRef" refer="gridKey">
+            <xs:selector xpath="." />
+            <xs:field xpath="@grid" />
+          </xs:keyref>
+          <xs:keyref name="selectButtonRef" refer="buttonKey">
+            <xs:selector xpath="." />
+            <xs:field xpath="@button" />
+          </xs:keyref>
+        </xs:element>
+      </xs:sequence>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="icon">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="display-mode" default="normal">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="normal" />
+                <xs:enumeration value="zoom" />
+                <xs:enumeration value="stretch" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="rotation">
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="text">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="alignment" default="center">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="center" />
+                <xs:enumeration value="top" />
+                <xs:enumeration value="bottom" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="actionType" abstract="true" />
+  <xs:complexType name="log" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="actionType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="select">
+    <xs:complexContent>
+      <xs:extension base="actionType">
+        <xs:attribute name="button" type="xs:NCName" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="scanner">
+    <xs:complexContent>
+      <xs:extension base="actionType">
+        <xs:attribute name="start" type="xs:boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="switch">
+    <xs:complexContent>
+      <xs:extension base="actionType">
+        <xs:attribute name="grid" type="xs:NCName" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="tcp">
+    <xs:complexContent>
+      <xs:extension base="actionType">
+        <xs:choice>
+          <xs:sequence>
+            <xs:element name="host" type="xs:string" />
+            <xs:element name="port" type="xs:positiveInteger" />
+            <xs:element name="message" type="xs:string" />
+          </xs:sequence>
+          <xs:sequence>
+            <xs:element name="destination">
+              <xs:complexType>
+                <xs:attribute name="ref" type="tcpRefType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="message" type="xs:string" />
+          </xs:sequence>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="tcpRefType">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:complexType name="time" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="actionType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="tts" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="actionType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:group name="buttonStateGroup">
+    <xs:sequence>
+      <xs:element name="state" type="stateType" minOccurs="2" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:group>
+  <xs:complexType name="stateType">
+    <xs:group ref="buttonContentGroup" />
+    <xs:attribute name="number" type="xs:nonNegativeInteger" use="required" />
+    <xs:attribute name="start" type="xs:boolean" use="optional" />
+    <xs:attribute name="final" type="xs:boolean" use="optional" />
+  </xs:complexType>
+  <xs:simpleType name="colorType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="#([0-9a-fA-F]{3}){1,2}" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

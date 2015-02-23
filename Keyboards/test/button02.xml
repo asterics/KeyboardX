@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Testing buttons with dimension > 1.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  
+  <default>
+    <scanner>
+      <active>false</active>
+      <type>linear</type>
+    </scanner>
+    <style>
+      <drawer>border-margin</drawer>
+    </style>
+  </default>
+
+  <grid id="g1">
+    <dimension cols="2" rows="1" />
+    <button id="b1">
+      <position x="0" y="0" dimX="2" />
+      <text>2x1</text>
+      <action xsi:type="switch" grid="g2" />
+    </button>
+  </grid>
+
+  <grid id="g2">
+    <dimension cols="1" rows="2" />
+    <button id="b1">
+      <position x="0" y="0" dimY="2" />
+      <text>1x2</text>
+      <action xsi:type="switch" grid="g3" />
+    </button>
+  </grid>
+
+  <grid id="g3">
+    <dimension cols="3" rows="1" />
+    <button id="b1">
+      <position x="0" y="0" dimX="2" />
+      <text>2x1</text>
+      <action xsi:type="switch" grid="g4" />
+    </button>
+    <button id="b2">
+      <position x="2" y="0" />
+      <text>1x1</text>
+      <action xsi:type="switch" grid="g4" />
+    </button>
+  </grid>
+
+  <grid id="g4">
+    <dimension cols="3" rows="1" />
+    <button id="b1">
+      <position x="0" y="0" />
+      <text>1x1</text>
+      <action xsi:type="switch" grid="g5" />
+    </button>
+    <button id="b2">
+      <position x="1" y="0" dimX="2" />
+      <text>2x1</text>
+      <action xsi:type="switch" grid="g5" />
+    </button>
+  </grid>
+
+  <grid id="g5">
+    <dimension cols="1" rows="3" />
+    <button id="b1">
+      <position x="0" y="0" dimY="2" />
+      <text>1x2</text>
+      <action xsi:type="switch" grid="g6" />
+    </button>
+    <button id="b2">
+      <position x="0" y="2" />
+      <text>1x1</text>
+      <action xsi:type="switch" grid="g6" />
+    </button>
+  </grid>
+
+  <grid id="g6">
+    <dimension cols="1" rows="3" />
+    <button id="b1">
+      <position x="0" y="0" />
+      <text>1x1</text>
+      <action xsi:type="switch" grid="g7" />
+    </button>
+    <button id="b2">
+      <position x="0" y="1" dimY="2" />
+      <text>1x2</text>
+      <action xsi:type="switch" grid="g7" />
+    </button>
+  </grid>
+
+  <grid id="g7">
+    <dimension cols="7" rows="7" />
+    <button id="b1">
+      <position x="0" y="0" dimX="2" dimY="2" />
+      <text>1</text>
+    </button>
+    <button id="b2">
+      <position x="5" y="0" dimX="2" dimY="2" />
+      <text>2</text>
+    </button>
+    <button id="b3">
+      <position x="5" y="5" dimX="2" dimY="2" />
+      <text>3</text>
+    </button>
+    <button id="b4">
+      <position x="0" y="5" dimX="2" dimY="2" />
+      <text>4</text>
+    </button>
+    <button id="b5">
+      <position x="2" y="1" dimX="3" />
+      <text>5</text>
+    </button>
+    <button id="b6">
+      <position x="5" y="2" dimY="3" />
+      <text>6</text>
+    </button>
+    <button id="b7">
+      <position x="2" y="5" dimX="3" />
+      <text>7</text>
+    </button>
+    <button id="b8">
+      <position x="1" y="2" dimY="3" />
+      <text>8</text>
+    </button>
+    <button id="b9">
+      <position x="3" y="3" />
+      <text>9</text>
+      <action xsi:type="switch" grid="g1" />
+    </button>
+  </grid>
+  
+</keyboard>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+The config file for Player.
+-->
+<config
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="config.xsd"
+>
+  <global>
+    <schemaFileName>keyboard.xsd</schemaFileName>
+    <schemaValidation>true</schemaValidation>
+    <clickTriggerActive>true</clickTriggerActive>
+    <showMouseChanges>true</showMouseChanges>
+    <buttonPressSynchronous>true</buttonPressSynchronous>
+    <net>
+      <tcpDestination id="tcp1">
+        <host>localhost</host>
+        <port>50987</port>
+      </tcpDestination>
+      <tcpSink active="false" port="50987" />
+    </net>
+  </global>
+  <scanner>
+    <active>true</active>
+    <type>row-column</type>
+    <initialScanDelay>30</initialScanDelay>
+    <inputAcceptanceTime>5</inputAcceptanceTime>
+    <postAcceptanceDelay>30</postAcceptanceDelay>
+    <postInputAcceptanceTime>1000</postInputAcceptanceTime>
+    <repeatAcceptanceDelay>750</repeatAcceptanceDelay>
+    <repeatTime>250</repeatTime>
+    <scanTime>500</scanTime>
+    <startLeft>true</startLeft>
+    <startTop>true</startTop>
+    <moveHorizontal>true</moveHorizontal>
+    <localCycleLimit>2</localCycleLimit>
+  </scanner>
+  <style>
+    <drawer>border</drawer>
+    <gridBackColor>LightGray</gridBackColor>
+    <gridBorderColor>LightSlateGray</gridBorderColor>
+    <selectColor>Red</selectColor>
+    <mouseColor>MidnightBlue</mouseColor>
+    <borderWidth>5</borderWidth>
+    <marginWidth>7</marginWidth>
+    <gapWidth>5</gapWidth>
+    <buttonBackColor>Seashell</buttonBackColor>
+    <buttonFontColor>Black</buttonFontColor>
+  </style>
+</config>

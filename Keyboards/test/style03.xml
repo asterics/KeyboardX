@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+A keyboard to test text and icon features.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  <grid id="g1">
+    <dimension cols="4" rows="5" />
+    
+    <!-- row A -->
+    <button id="btA0">
+      <position x="0" y="0" />
+      <text>default</text>
+    </button>
+    <button id="btA1">
+      <position x="1" y="0" />
+      <text alignment="top">top</text>
+    </button>
+    <button id="btA2">
+      <position x="2" y="0" />
+      <text alignment="center">center</text>
+    </button>
+    <button id="btA3">
+      <position x="3" y="0" />
+      <text alignment="bottom">bottom</text>
+    </button>
+    
+    <!-- row B -->
+    <button id="btB0">
+      <position x="0" y="1" />
+      <icon>stickman1.jpg</icon>
+    </button>
+    <button id="btB1">
+      <position x="1" y="1" />
+      <icon display-mode="normal">stickman1.jpg</icon>
+    </button>
+    <button id="btB2">
+      <position x="2" y="1" />
+      <icon display-mode="stretch">stickman1.jpg</icon>
+    </button>
+    <button id="btB3">
+      <position x="3" y="1" />
+      <icon display-mode="zoom">stickman1.jpg</icon>
+    </button>
+
+    <!-- row C -->
+    <button id="btC0">
+      <position x="0" y="2" />
+      <icon>car1.jpg</icon>
+    </button>
+    <button id="btC1">
+      <position x="1" y="2" />
+      <icon display-mode="normal">car1.jpg</icon>
+    </button>
+    <button id="btC2">
+      <position x="2" y="2" />
+      <icon display-mode="stretch">car1.jpg</icon>
+    </button>
+    <button id="btC3">
+      <position x="3" y="2" />
+      <icon display-mode="zoom">car1.jpg</icon>
+    </button>
+
+    <!-- row D -->
+    <button id="btD0">
+      <position x="0" y="3" />
+      <icon>stickman1.jpg</icon>
+      <text>text default</text>
+    </button>
+    <button id="btD1">
+      <position x="1" y="3" />
+      <icon>stickman1.jpg</icon>
+      <text alignment="top">text top</text>
+    </button>
+    <button id="btD2">
+      <position x="2" y="3" />
+      <icon>stickman1.jpg</icon>
+      <text alignment="center">text center</text>
+    </button>
+    <button id="btD3">
+      <position x="3" y="3" />
+      <icon>stickman1.jpg</icon>
+      <text alignment="bottom">text bottom</text>
+    </button>
+
+    <!-- row E -->
+    <button id="btE0">
+      <position x="0" y="4" />
+      <icon>car1.jpg</icon>
+      <text alignment="bottom">icon default</text>
+    </button>
+    <button id="btE1">
+      <position x="1" y="4" />
+      <icon display-mode="normal">car1.jpg</icon>
+      <text alignment="bottom">icon normal</text>
+    </button>
+    <button id="btE2">
+      <position x="2" y="4" />
+      <icon display-mode="stretch">car1.jpg</icon>
+      <text alignment="bottom">icon stretch</text>
+    </button>
+    <button id="btE3">
+      <position x="3" y="4" />
+      <icon display-mode="zoom">car1.jpg</icon>
+      <text alignment="bottom">icon zoom</text>
+    </button>
+    
+  </grid>
+</keyboard>

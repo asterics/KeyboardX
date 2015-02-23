@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Basic text, icons and background color.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1.xsd"
+    version="20150101"
+>
+  <grid id="g1">
+    <dimension cols="2" rows="3" />
+    <button id="bt00">
+      <position x="0" y="0" />
+      <text>just text</text>
+    </button>
+    <button id="bt10">
+      <position x="1" y="0" />
+      <text>text with bg</text>
+      <style>
+        <buttonBackColor>#b8b8ff</buttonBackColor>
+      </style>
+    </button>
+    <button id="bt01">
+      <position x="0" y="1" />
+      <icon>animal\png\deer2.png</icon>
+      <style>
+        <buttonBackColor>#3399ff</buttonBackColor>
+      </style>
+    </button>
+    <button id="bt11">
+      <position x="1" y="1" />
+      <icon>animal\png\deer4.png</icon>
+    </button>
+    <button id="bt02">
+      <position x="0" y="2" />
+      <icon>basic\png\document68.png</icon>
+      <text>icon and text</text>
+    </button>
+    <button id="bt12">
+      <position x="1" y="2" />
+      <icon>basic\png\star82.png</icon>
+      <text>all 3</text>
+      <style>
+        <buttonBackColor>#33d685</buttonBackColor>
+      </style>
+    </button>
+  </grid>
+</keyboard>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+A simple keyboard with a 2x2 grid and mixed button icons and text.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  <grid id="g1">
+    <dimension cols="2" rows="2" />
+    <button id="btn0-0">
+      <position x="0" y="0" />
+      <text>just text</text>
+    </button>
+    <button id="btn1-0">
+      <position x="1" y="0" />
+      <icon>basic\png\navigate2.png</icon>
+    </button>
+    <button id="btn0-1">
+      <position x="0" y="1" />
+      <icon>basic\png\open134.png</icon>
+      <text alignment="top">text and</text>
+    </button>
+    <button id="btn1-1">
+      <position x="1" y="1" />
+      <icon>basic\png\radiation2.png</icon>
+      <style>
+        <buttonBackColor>#00ff00</buttonBackColor>
+      </style>
+    </button>
+  </grid>
+</keyboard>

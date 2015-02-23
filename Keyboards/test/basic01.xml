@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+A very basic keyboard file with a 5x3 grid with text only.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  <grid id="g1">
+    <dimension cols="5" rows="3" />
+    <button id="btn0-0">
+      <position x="0" y="0" />
+      <text>btn0-0</text>
+    </button>
+    <button id="btn1-0">
+      <position x="1" y="0" />
+      <text>btn1-0</text>
+    </button>
+    <button id="btn2-0">
+      <position x="2" y="0" />
+      <text>btn2-0</text>
+    </button>
+    <button id="btn3-0">
+      <position x="3" y="0" />
+      <text>btn3-0</text>
+    </button>
+    <button id="btn4-0">
+      <position x="4" y="0" />
+      <text>btn4-0</text>
+    </button>
+    
+    <button id="btn0-1">
+      <position x="0" y="1" />
+      <text>btn0-1</text>
+    </button>
+    <button id="btn1-1">
+      <position x="1" y="1" />
+      <text>btn1-1</text>
+    </button>
+    <button id="btn2-1">
+      <position x="2" y="1" />
+      <text>btn2-1</text>
+    </button>
+    <button id="btn3-1">
+      <position x="3" y="1" />
+      <text>btn3-1</text>
+    </button>
+    <button id="btn4-1">
+      <position x="4" y="1" />
+      <text>btn4-1</text>
+    </button>
+    
+    <button id="btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+    </button>
+    <button id="btn1-2">
+      <position x="1" y="2" />
+      <text>btn1-2</text>
+    </button>
+    <button id="btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+    </button>
+    <button id="btn3-2">
+      <position x="3" y="2" />
+      <text>btn3-2</text>
+    </button>
+    <button id="btn4-2">
+      <position x="4" y="2" />
+      <text>btn4-2</text>
+    </button>
+  </grid>
+</keyboard>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Test the two different kinds of destination for tcp action.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+
+  <default>
+    <scanner>
+      <active>true</active>
+    </scanner>
+  </default>
+
+  <grid id="g1">
+    <dimension cols="2" rows="1" />
+    <button id="btn0-0">
+      <position x="0" y="0" />
+      <text>tcp1</text>
+      <action xsi:type="tcp">
+        <destination ref="tcp1"/>
+        <message>send to tcp1</message>
+      </action>
+    </button>
+    
+    <button id="btn1-0">
+      <position x="1" y="0" />
+      <text>tcp2</text>
+      <action xsi:type="tcp">
+        <host>localhost</host>
+        <port>50987</port>
+        <message>send to special dest</message>
+      </action>
+    </button>
+  </grid>
+  
+</keyboard>

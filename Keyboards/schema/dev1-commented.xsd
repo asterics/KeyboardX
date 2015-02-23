@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  OPEN QUESTIONS/TOPICS/TASKS:
+  
+  There has to be some kind of notifier that tells the surrounding system e.g. AsTeRICS what 
+  happens at the moment, when a column gets focused, when a button gets pressed, etc.. The key 
+  question is, do we have to model this extra in the XML file, and if yes, where does it fit 
+  best?
+  
+  Further inside a grid there has to be modeled, how scanning works. This is a very complex 
+  thing, because it is requested that custom scanning should be possible. That means, the designer 
+  can freely define the scanning areas and sequence, the same again for the child areas.
+  
+  Idea:
+  <scanner>
+    <step>
+      <step>
+        <step>btA0</step>
+        <step>btB1</step>
+        <step>btC1</step>
+      </step>
+        <step>btA1</step>
+        <step>btB0</step>
+      </step>
+      <step>btC0</step>
+    </step>
+  </scanner>
+-->
+
+<!--
+  This schema uses the Venetian Blind Design with global declared complex types.
+  (http://blogs.msdn.com/b/skaufman/archive/2005/04/29/413491.aspx)
+-->
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:t="http://www.jku.at/iis/something"
+    targetNamespace="http://www.jku.at/iis/something"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="dev1"
+>
+
+  <!--
+  The keyboard tag is the root tag of the XML file (which is also called keyboard file) and as such 
+  there can be only one keyboard tag present.
+  The keyboard file is shipped together with icons, wav files, etc. (so called assets) in some kind 
+  of a zip file. There is only one keyboard file allowed in this zip file.
+  -->
+  <xs:element name="keyboard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="default" minOccurs="0">
+          <xs:complexType>
+            <xs:group ref="defaultGroup" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="grid" type="gridType" minOccurs="1" maxOccurs="unbounded">
+          <xs:key name="buttonKey">
+            <xs:selector xpath="t:button" />
+            <xs:field xpath="@id" />
+          </xs:key>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" type="keyboardVersion" />
+    </xs:complexType>
+    <xs:key name="gridKey">
+      <xs:selector xpath="t:grid" />
+      <xs:field xpath="@id" />
+    </xs:key>
+  </xs:element>
+
+  <!--
+  We need a version attribute, so that the Player application can check if the keyboard model is 
+  still compatible or not.
+  Pattern for 2000-01-01 to 2999-12-31: 2\d{3}(0\d|1[0-2])([0-2]\d|3[0,1])
+  -->
+  <xs:simpleType name="keyboardVersion">
+    <xs:restriction base="xs:positiveInteger">
+      <!-- latter or equal than 2015-01-01 -->
+      <xs:pattern value="2\d[1-9](5(0\d|1[0-2])([0-2]\d|3[01])|[6-9](0\d|1[0-2])([0-2]\d|3[01]))" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--
+  Both keyboard and grid elements can contain a default section, where application default 
+  properties can be overwritten.
+  
+  In general, it is intended to work this way: there are fix coded application default values for 
+  every property, this can be overwritten by the keyboard at runtime, and this settings can be 
+  overwritten by a grid, and this settings can be overwritten by a button, and maybe this settings 
+  can be overwritten by a buttons state.
+  -->
+  <xs:group name="defaultGroup">
+    <xs:sequence>
+      <xs:element name="scanner" type="scannerType" minOccurs="0" />
+      <xs:element name="style" type="gridStyleType" minOccurs="0" />
+      <xs:element name="tcpDestination" type="tcpDestinationType" minOccurs="0" />
+    </xs:sequence>
+  </xs:group>
+
+  <!--
+  Default scanner specific settings.
+  Description for elements can be found in config.xsd of Player for now.
+  -->
+  <xs:complexType name="scannerType">
+    <xs:sequence>
+      <xs:element name="active" type="xs:boolean" minOccurs="0" />
+      <xs:element name="type" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="column-row" />
+            <xs:enumeration value="linear" />
+            <xs:enumeration value="row-column" />
+            <xs:enumeration value="test" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      
+      <xs:element name="initialScanDelay" type="xs:nonNegativeInteger" minOccurs="0" />
+      <xs:element name="inputAcceptanceTime" type="xs:nonNegativeInteger" minOccurs="0" />
+      <xs:element name="postAcceptanceDelay" type="xs:nonNegativeInteger" minOccurs="0" />
+      <xs:element name="postInputAcceptanceTime" type="xs:nonNegativeInteger" minOccurs="0" />
+      <xs:element name="scanTime" type="xs:nonNegativeInteger" minOccurs="0" />
+      
+      <xs:element name="startLeft" type="xs:boolean" minOccurs="0" />
+      <xs:element name="startTop" type="xs:boolean" minOccurs="0" />
+      <xs:element name="moveHorizontal" type="xs:boolean" minOccurs="0" />
+      <xs:element name="localCycleLimit" type="xs:nonNegativeInteger" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--
+  Properties related to style of a grid. 
+  This extends button style properties. So properties for buttons can be overwritten here.
+  -->
+  <xs:complexType name="gridStyleType">
+    <xs:complexContent>
+      <xs:extension base="buttonStyleType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="drawer">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="border" />
+                <xs:enumeration value="border-gap" />
+                <xs:enumeration value="border-margin" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="gridBackColor" type="colorType" />
+          <xs:element name="gridBorderColor" type="colorType" />
+          <xs:element name="selectColor" type="colorType" />
+          <xs:element name="mouseColor" type="colorType" />
+          <xs:element name="borderWidth" type="xs:positiveInteger" />
+          <xs:element name="marginWidth" type="xs:positiveInteger" />
+          <xs:element name="gapWidth" type="xs:positiveInteger" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!--
+  Properties related to the style of a button.
+  This properties should have a hierarchy in the form of: application -> keyboard -> grid 
+      -> button/area
+  A child element always overrides properties of a parent element. If a property is not present in 
+  the current element, the parents property is used, and so on.
+  -->
+  <xs:complexType name="buttonStyleType">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="buttonBackColor" type="colorType" />
+      <xs:element name="buttonBorderColor" type="colorType" />
+      <xs:element name="buttonFontColor" type="colorType" />
+      <xs:element name="buttonFontSize" type="xs:positiveInteger" />
+    </xs:choice>
+  </xs:complexType>
+
+  <!--
+  A TCP destination an be used as a reference for TCP actions. TCP destinations can be defined at 
+  application, keyboard and grid level. A TCP action at button level can either reference a TCP 
+  destination from a level above or provide full destination information itself.
+  -->
+  <xs:complexType name="tcpDestinationType">
+    <xs:sequence>
+      <xs:element name="host" type="xs:string" />
+      <xs:element name="port" type="xs:positiveInteger" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+  </xs:complexType>
+
+  <!-- 
+  A keyboard can have several grids.
+  -->
+  <xs:complexType name="gridType">
+    <xs:sequence>
+      <xs:group ref="defaultGroup" />
+      <xs:element name="dimension" type="gridDimensionType" />
+      <xs:element name="button" type="buttonType" maxOccurs="unbounded" />
+    </xs:sequence>
+    <!-- Needed e.g. for grid switch action (i.e. loading another grid from current one). -->
+    <xs:attribute name="id" type="xs:NCName" use="required" />
+    <!--
+    If there is more than one grid contained in a keyboard, one should be marked as default. That 
+    one will be shown by the player at first. If there is no grid marked as default, the first one 
+    will be used as default. If more than one keyboard is marked as default, either the last one 
+    will be used, or an error will be shown, depending on the implementation of the player.
+    -->
+    <xs:attribute name="default" type="xs:boolean" />
+  </xs:complexType>
+
+  <!-- 
+  A grid is defined via a rectangular dimension, that is columns and rows. Instead of 
+  attributes this is modeled via an extra tag.
+  -->
+  <!-- TODO 3: add pixel dimension as optional attributes as info for player -->
+  <xs:complexType name="gridDimensionType">
+    <xs:attribute name="cols" type="xs:positiveInteger" use="required" />
+    <xs:attribute name="rows" type="xs:positiveInteger" use="required" />
+  </xs:complexType>
+
+  <!--
+  Buttons are the key elements of a keyboard. Here a lot of things come together.
+    
+  Buttons can have a custom dimension, but it has to be rectangular. Further the dimension is not 
+  allowed to cross grid borders. Also no overlapping of buttons is allowed. Since (I think) it is 
+  not possible to check this kind of restrictions via XML schema, this has to be checked by the 
+  player when loading a keyboard.  
+  -->
+  <xs:complexType name="buttonType">
+    <xs:sequence>
+      <xs:element name="position" type="positionType" />
+      <xs:choice>
+        <xs:element name="clone" type="buttonCloneType">
+          <xs:keyref name="cloneButtonRef" refer="buttonKey">
+            <xs:selector xpath="." />
+            <xs:field xpath="@button" />
+          </xs:keyref>
+        </xs:element>
+        <xs:sequence>
+          <xs:choice>
+            <xs:group ref="buttonContentGroup" />
+            <xs:group ref="buttonStateGroup" />
+          </xs:choice>
+        </xs:sequence>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:NCName" use="required" />
+    <!--
+      Inside the focus element can be defined what should happen when a button gets focused, 
+      e.g. reading a description to a blind person.
+    -->
+    <!--
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="focus" />
+      </xs:sequence>
+    -->
+  </xs:complexType>
+
+  <!--
+  Every element inside a grid must have a position element, were the attributes 'x' and 'y' are 
+  mandatory. The default dimension of a button is 1x1 grid elements. Both attributes 'dimX' and 
+  'dimY' are optional.
+  -->
+  <xs:complexType name="positionType">
+    <xs:attribute name="x" type="xs:nonNegativeInteger" use="required" />
+    <xs:attribute name="y" type="xs:nonNegativeInteger" use="required" />
+    <xs:attribute name="dimX" type="xs:positiveInteger" />
+    <xs:attribute name="dimY" type="xs:positiveInteger" />
+  </xs:complexType>
+
+  <!--
+  It should be possible to clone another button inside a grid. In case there is a 'clone' element, 
+  no other element besides 'position' element is allowed for this button. The cloning button 
+  inherits everything from the cloned button except its id and position.
+  -->
+  <xs:complexType name="buttonCloneType">
+    <xs:attribute name="button" type="xs:NCName" use="required" />
+  </xs:complexType>
+
+  <!--
+  The main content of a non reference button or state of a button.
+  -->
+  <xs:group name="buttonContentGroup">
+    <xs:sequence>
+      
+      <!--
+      There is at most one icon and text tag allowed. But there have to be at least one of them.
+      If an icon tag is present, it has to be before the (optional) text tag.
+      -->
+      <xs:choice>
+        <xs:sequence>
+          <xs:element ref="icon" />
+          <xs:element ref="text" minOccurs="0" />
+        </xs:sequence>
+        <xs:sequence>
+          <xs:element ref="text" />
+        </xs:sequence>
+      </xs:choice>
+      
+      <xs:element name="style" type="buttonStyleType" minOccurs="0" />
+      
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="action" type="actionType">
+          <xs:keyref name="switchGridRef" refer="gridKey">
+            <xs:selector xpath="." />
+            <xs:field xpath="@grid" />
+          </xs:keyref>
+          <xs:keyref name="selectButtonRef" refer="buttonKey">
+            <xs:selector xpath="." />
+            <xs:field xpath="@button" />
+          </xs:keyref>
+        </xs:element>
+      </xs:sequence>
+      
+    </xs:sequence>
+  </xs:group>
+
+  <!--
+  An icon is referenced by it's path. The allowed file types depend on the player implementation.
+  The following display modes are available:
+   - normal: icon gets zoomed as good as it gets, original ratio, nothing clipped (default)
+   - zoom: icon gets zoomed to fill the button, original ratio, content clipped
+   - stretch: icon gets stretched to fill the button, ratio modified, nothing clipped
+  -->
+  <!--
+  The icon element is global, because it gets reused in the exact same way frequently.
+  -->
+  <xs:element name="icon">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="display-mode" default="normal">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="normal" />
+                <xs:enumeration value="zoom" />
+                <xs:enumeration value="stretch" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <!-- NOTE: not implemented yet -->
+          <xs:attribute name="rotation">
+            <xs:simpleType>
+              <xs:restriction base="xs:positiveInteger">
+                <xs:enumeration value="90" />
+                <xs:enumeration value="180" />
+                <xs:enumeration value="270" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <!--
+  The text element is global, because it gets reused in the exact same way frequently.
+  -->
+  <xs:element name="text">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="alignment" default="center">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="center" />
+                <xs:enumeration value="top" />
+                <xs:enumeration value="bottom" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <!--
+  Inside the action element, all actions for a button has to be defined. This element is 
+  optional, cause it is legitimate to have buttons without actions.
+  -->
+  <!-- TODO 2: add attribute for running actions asynchronous -->
+  <xs:complexType name="actionType" abstract="true" />
+
+  <!-- Log Action: simply logs a message -->
+  <xs:complexType name="log" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="actionType" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Select Action: selects button with given id -->
+  <xs:complexType name="select">
+    <xs:complexContent>
+      <xs:extension base="actionType">
+        <xs:attribute name="button" type="xs:NCName" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Scanner Action: starts or stops scanner of current grid -->
+  <xs:complexType name="scanner">
+    <xs:complexContent>
+      <xs:extension base="actionType">
+        <xs:attribute name="start" type="xs:boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Switch Grid Action -->
+  <xs:complexType name="switch">
+    <xs:complexContent>
+      <xs:extension base="actionType">
+        <xs:attribute name="grid" type="xs:NCName" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- TCP Action -->
+  <xs:complexType name="tcp">
+    <xs:complexContent>
+      <xs:extension base="actionType">
+        <xs:choice>
+          <xs:sequence>
+            <xs:element name="host" type="xs:string" />
+            <xs:element name="port" type="xs:positiveInteger" />
+            <xs:element name="message" type="xs:string" />
+          </xs:sequence>
+          <xs:sequence>
+            <xs:element name="destination">
+              <xs:complexType>
+                <xs:attribute name="ref" type="tcpRefType" use="required" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="message" type="xs:string" />
+          </xs:sequence>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  Maybe there will be a defined structure for that in future.
+  -->
+  <xs:simpleType name="tcpRefType">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+
+  <!-- Time Action: waits a given number of miliseconds -->
+  <xs:complexType name="time" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="actionType" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Text To Speech Action -->
+  <xs:complexType name="tts" mixed="true">
+    <xs:complexContent>
+      <xs:extension base="actionType" />
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!--
+  A button should be able to change at runtime, e.g. for switching light on and off. The idea is, 
+  that a button can contain several states, or in other words, a button should represent a state 
+  machine.
+  
+  All state elements has to have a sequence number. There has to be a start state and there can 
+  be an optional final state. As it makes no sense, that a button contains only one state, at 
+  least two state elements (or none) have to be present. The action and focus elements are only 
+  allowed inside of state elements then.
+  
+  Transitions between states are triggerd by the input alphabet. This should be implemented by an 
+  action, e.g. "TransitionAction". A transition action would influence at least the whole grid. In 
+  this way sticky keys could be already implemented (at least theoretically).
+  
+  It should be considered, that the state of a button can also change at runtime because of 
+  environmental changes, e.g. somebody else turns the light on. In this case the button should 
+  switch from "turn light on" state to "turn light off" state without triggering it. So, a 
+  transition action should be able to be injected via TCP.
+  
+  What if the light is (externally) switched, while the grid containing the light button is 
+  currently not active. Either even non active grids should listen to transition actions, and 
+  therefore all grids use the same input alphabet. Or buttons like the light controlling button 
+  are able to query their state from a defined external source when grid gets loaded. But how 
+  the hell would one model this in a sane way?
+      
+  Basic idea of states:
+  <state number="0" start="true"></state>
+  <state number="1"></state>
+  <state number="2" final="true"></state>
+  -->
+  <!-- TODO 1: try to model start and end states -->
+  <xs:group name="buttonStateGroup">
+    <xs:sequence>
+      <xs:element name="state" type="stateType" minOccurs="2" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:group>
+
+  <xs:complexType name="stateType">
+    <xs:group ref="buttonContentGroup" />
+    <xs:attribute name="number" type="xs:nonNegativeInteger" use="required" />
+    <xs:attribute name="start" type="xs:boolean" use="optional" />
+    <xs:attribute name="final" type="xs:boolean" use="optional" />
+  </xs:complexType>
+
+  <!-- GENERAL TYPES -->
+  
+  <!--
+  Allows hexadecimal color codes in both short and long form (e.g. #333 or #FF00AA).
+  -->
+  <xs:simpleType name="colorType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="#([0-9a-fA-F]{3}){1,2}" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <!-- NOTES, THOUGHTS, OUTCOMMENTED STUFF -->
+
+  <!--
+  Beside buttons a grid can also contain so called areas. Areas can be used for text fields and 
+  for word prediction. (In future there will be maybe even other fields of application.)
+  An area has to have an id and also a type attribute. The type can be 'textfield' or 
+  'predictionzone' etc..
+  -->
+  <!--
+  <xs:complexType name="areaType">
+    <!-
+    An area has several position elements that define the area space.
+    ->
+    <xs:sequence>
+      <xs:element name="position" type="positionType" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+    <xs:attribute name="type" type="xs:string" use="required" />
+  </xs:complexType>
+  -->
+
+</xs:schema>

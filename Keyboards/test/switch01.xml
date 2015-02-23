@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+A keyboard containing two 2x2 grids for demonstrating grid switch.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  
+  <grid id="g1">
+    <dimension cols="2" rows="2" />
+    <button id="btn0-0">
+      <position x="0" y="0" />
+      <text>switch</text>
+      <action xsi:type="switch" grid="g2"/>
+    </button>
+    <button id="btn1-0">
+      <position x="1" y="0" />
+      <text>g1_1-0</text>
+    </button>
+    <button id="btn0-1">
+      <position x="0" y="1" />
+      <text>g1_0-1</text>
+    </button>
+    <button id="btn1-1">
+      <position x="1" y="1" />
+      <text>g1_1-1</text>
+    </button>
+  </grid>
+
+  <grid id="g2">
+    <dimension cols="2" rows="2" />
+    <button id="btn0-0">
+      <position x="0" y="0" />
+      <text>switch</text>
+      <action xsi:type="switch" grid="g1" />
+    </button>
+    <button id="btn1-0">
+      <position x="1" y="0" />
+      <text>g2_1-0</text>
+    </button>
+    <button id="btn0-1">
+      <position x="0" y="1" />
+      <text>g2_0-1</text>
+    </button>
+    <button id="btn1-1">
+      <position x="1" y="1" />
+      <text>g2_1-1</text>
+    </button>
+  </grid>
+  
+</keyboard>

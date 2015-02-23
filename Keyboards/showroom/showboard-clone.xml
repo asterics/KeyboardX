@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Demonstrates cloning.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1.xsd"
+    version="20150101"
+>
+
+  <grid id="g1">
+    
+    <scanner>
+      <active>false</active>
+    </scanner>
+    <style>
+      <drawer>border</drawer>
+      <gridBorderColor>#007013</gridBorderColor>
+    </style>
+    
+    <dimension cols="6" rows="3" />
+    
+    <button id="button">
+      <position x="1" y="1" />
+      <icon>basic\svg\copy12.svg</icon>
+      <text alignment="bottom">SVG</text>
+      <style>
+        <buttonBackColor>#FFFFCC</buttonBackColor>
+        <buttonFontColor>#0047D6</buttonFontColor>
+      </style>
+      <action xsi:type="tts">The whole button gets cloned, except it's position!</action>
+    </button>
+
+    <button id="clone">
+      <position x="3" y="1" dimX="2" />
+      <clone button="button" />
+    </button>
+  </grid>
+  
+</keyboard>

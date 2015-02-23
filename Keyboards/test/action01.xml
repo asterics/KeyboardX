@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+A simple 1x1 grid for testing actions. Uncoment action to test it.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  <grid id="g1">
+    <dimension cols="1" rows="1" />
+    <button id="btn0-0">
+      <position x="0" y="0" />
+      <text>action</text>
+      <!--
+      <action xsi:type="log">testing log</action>
+      <action xsi:type="select" button="btn0-0" />
+      <action xsi:type="scanner" start="true" />
+      <action xsi:type="scanner" start="false" />
+      <action xsi:type="switch" grid="g1" />
+      <action xsi:type="tcp">
+        <host>localhost</host>
+        <port>50987</port>
+        <message>dest inside</message>
+      </action>
+      <action xsi:type="tcp">
+        <destination ref="tcp1"/>
+        <message>dest ref</message>
+      </action>
+      <action xsi:type="time">100</action>
+      <action xsi:type="tts">testing 1000</action>
+      -->
+    </button>
+  </grid>
+</keyboard>

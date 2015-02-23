@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Keyboard for final presentation of master thesis.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1.xsd"
+    version="20150101"
+>
+  <default>
+    <scanner>
+      <active>true</active>
+      <type>row-column</type>
+    </scanner>
+    <style>
+      <buttonBackColor>#FFF</buttonBackColor>
+      <gridBorderColor>#C2C2C2</gridBorderColor>
+      <gridBackColor>#C2C2C2</gridBackColor>
+      <mouseColor>#B8E600</mouseColor>
+      <selectColor>#FF0000</selectColor>
+    </style>
+  </default>
+  
+  <grid id="main">
+    <scanner>
+      <startLeft>false</startLeft>
+    </scanner>
+    <dimension cols="10" rows="4" />
+    <!-- row 0 -->
+    <button id="btn0-0">
+      <position x="0" y="0" />
+      <icon>basic\png\light56.png</icon>
+      <style>
+        <buttonBackColor>#009696</buttonBackColor>
+      </style>
+      <action xsi:type="tcp">
+        <destination ref="tcp1"/>
+        <message>toggle</message>
+      </action>
+    </button>
+    <button id="btn1-0">
+      <position x="1" y="0" />
+      <icon>basic\png\speech64.png</icon>
+      <style>
+        <buttonBackColor>#009696</buttonBackColor>
+      </style>
+      <action xsi:type="tts">Hier wird schön gesprochen!</action>
+    </button>
+    <button id="btn2-0">
+      <position x="2" y="0" dimX="2" />
+      <text>.</text>
+      <style>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+    </button>
+    <button id="btn4-0">
+      <position x="4" y="0" dimX="2" />
+      <text>.</text>
+      <style>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+    </button>
+    <button id="btn6-0">
+      <position x="6" y="0" dimX="2" />
+      <text>.</text>
+      <style>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+    </button>
+    <button id="btn8-0">
+      <position x="8" y="0" />
+      <icon>basic\png\arrow500.png</icon>
+      <style>
+        <buttonBackColor>#009696</buttonBackColor>
+      </style>
+    </button>
+    <button id="btn9-0">
+      <position x="9" y="0" />
+      <icon>basic\png\delete30.png</icon>
+      <style>
+        <buttonBackColor>#009696</buttonBackColor>
+      </style>
+    </button>
+    <!-- row 1 -->
+    <button id="btn0-1">
+      <position x="0" y="1" />
+      <text>Q</text>
+    </button>
+    <button id="btn1-1">
+      <position x="1" y="1" />
+      <text>W</text>
+    </button>
+    <button id="btn2-1">
+      <position x="2" y="1" />
+      <text>E</text>
+    </button>
+    <button id="btn3-1">
+      <position x="3" y="1" />
+      <text>R</text>
+    </button>
+    <button id="btn4-1">
+      <position x="4" y="1" />
+      <text>T</text>
+    </button>
+    <button id="btn5-1">
+      <position x="5" y="1" />
+      <text>Y</text>
+    </button>
+    <button id="btn6-1">
+      <position x="6" y="1" />
+      <text>U</text>
+    </button>
+    <button id="btn7-1">
+      <position x="7" y="1" />
+      <text>I</text>
+    </button>
+    <button id="btn8-1">
+      <position x="8" y="1" />
+      <text>O</text>
+    </button>
+    <button id="btn9-1">
+      <position x="9" y="1" />
+      <text>P</text>
+    </button>
+    <!-- row 2 -->
+    <button id="btn0-2">
+      <position x="0" y="2" />
+      <text>A</text>
+    </button>
+    <button id="btn1-2">
+      <position x="1" y="2" />
+      <text>S</text>
+    </button>
+    <button id="btn2-2">
+      <position x="2" y="2" />
+      <text>D</text>
+    </button>
+    <button id="btn3-2">
+      <position x="3" y="2" />
+      <text>F</text>
+    </button>
+    <button id="btn4-2">
+      <position x="4" y="2" />
+      <text>G</text>
+    </button>
+    <button id="btn5-2">
+      <position x="5" y="2" />
+      <text>H</text>
+    </button>
+    <button id="btn6-2">
+      <position x="6" y="2" />
+      <text>J</text>
+    </button>
+    <button id="btn7-2">
+      <position x="7" y="2" />
+      <text>K</text>
+    </button>
+    <button id="btn8-2">
+      <position x="8" y="2" />
+      <text>L</text>
+    </button>
+    <button id="btn9-2">
+      <position x="9" y="2" />
+      <text>123</text>
+      <style>
+        <buttonBackColor>#00B8E6</buttonBackColor>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+      <action xsi:type="switch" grid="number" />
+    </button>
+    <!-- row 3 -->
+    <button id="btn0-3">
+      <position x="0" y="3" />
+      <text>Z</text>
+    </button>
+    <button id="btn1-3">
+      <position x="1" y="3" />
+      <text>X</text>
+    </button>
+    <button id="btn2-3">
+      <position x="2" y="3" />
+      <text>C</text>
+    </button>
+    <button id="btn3-3">
+      <position x="3" y="3" />
+      <text>V</text>
+    </button>
+    <button id="btn4-3">
+      <position x="4" y="3" dimX="2" />
+      <text>SPACE</text>
+    </button>
+    <button id="btn6-3">
+      <position x="6" y="3" />
+      <text>B</text>
+    </button>
+    <button id="btn7-3">
+      <position x="7" y="3" />
+      <text>N</text>
+    </button>
+    <button id="btn8-3">
+      <position x="8" y="3" />
+      <text>M</text>
+    </button>
+    <button id="btn9-3">
+      <position x="9" y="3" />
+      <text>.!?</text>
+      <style>
+        <buttonBackColor>#00B8E6</buttonBackColor>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+      <action xsi:type="switch" grid="special"/>
+    </button>
+  </grid>
+
+  <grid id="number">
+    <scanner>
+      <startTop>false</startTop>
+    </scanner>
+    <dimension cols="10" rows="4" />
+    <!-- row 0 -->
+    <button id="btn0-0">
+      <position x="0" y="0" />
+      <icon>basic\png\light56.png</icon>
+      <style>
+        <buttonBackColor>#009696</buttonBackColor>
+      </style>
+      <action xsi:type="tcp">
+        <destination ref="tcp1"/>
+        <message>toggle</message>
+      </action>
+    </button>
+    <button id="btn1-0">
+      <position x="1" y="0" />
+      <icon>basic\png\speech64.png</icon>
+      <style>
+        <buttonBackColor>#009696</buttonBackColor>
+      </style>
+      <action xsi:type="tts">Hier wird schön gesprochen!</action>
+    </button>
+    <button id="btn2-0">
+      <position x="2" y="0" dimX="2" />
+      <text>.</text>
+      <style>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+    </button>
+    <button id="btn4-0">
+      <position x="4" y="0" dimX="2" />
+      <text>.</text>
+      <style>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+    </button>
+    <button id="btn6-0">
+      <position x="6" y="0" dimX="2" />
+      <text>.</text>
+      <style>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+    </button>
+    <button id="btn8-0">
+      <position x="8" y="0" />
+      <icon>basic\png\arrow500.png</icon>
+      <style>
+        <buttonBackColor>#009696</buttonBackColor>
+      </style>
+    </button>
+    <button id="btn9-0">
+      <position x="9" y="0" />
+      <icon>basic\png\delete30.png</icon>
+      <style>
+        <buttonBackColor>#009696</buttonBackColor>
+      </style>
+    </button>
+    <!-- row 2 -->
+    <button id="btn0-2">
+      <position x="0" y="2" />
+      <text>1</text>
+    </button>
+    <button id="btn1-2">
+      <position x="1" y="2" />
+      <text>2</text>
+    </button>
+    <button id="btn2-2">
+      <position x="2" y="2" />
+      <text>3</text>
+    </button>
+    <button id="btn3-2">
+      <position x="3" y="2" />
+      <text>4</text>
+    </button>
+    <button id="btn4-2">
+      <position x="4" y="2" />
+      <text>5</text>
+    </button>
+    <button id="btn5-2">
+      <position x="5" y="2" />
+      <text>6</text>
+    </button>
+    <button id="btn6-2">
+      <position x="6" y="2" />
+      <text>7</text>
+    </button>
+    <button id="btn7-2">
+      <position x="7" y="2" />
+      <text>8</text>
+    </button>
+    <button id="btn8-2">
+      <position x="8" y="2" />
+      <text>9</text>
+    </button>
+    <button id="btn9-2">
+      <position x="9" y="2" />
+      <text>0</text>
+    </button>
+    <!-- row 3 -->
+    <button id="btn0-3">
+      <position x="0" y="3" dimX="10" />
+      <text>A B C</text>
+      <style>
+        <buttonBackColor>#00B8E6</buttonBackColor>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+      <action xsi:type="switch" grid="main" />
+    </button>
+  </grid>
+
+  <grid id="special">
+    <scanner>
+      <type>linear</type>
+      <startLeft>false</startLeft>
+      <startTop>false</startTop>
+    </scanner>
+    <dimension cols="10" rows="4" />
+    <!-- row 0 -->
+    <button id="btn0-0">
+      <position x="0" y="0" />
+      <icon>basic\png\light56.png</icon>
+      <style>
+        <buttonBackColor>#009696</buttonBackColor>
+      </style>
+      <action xsi:type="tcp">
+        <destination ref="tcp1"/>
+        <message>toggle</message>
+      </action>
+    </button>
+    <button id="btn1-0">
+      <position x="1" y="0" />
+      <icon>basic\png\speech64.png</icon>
+      <style>
+        <buttonBackColor>#009696</buttonBackColor>
+      </style>
+      <action xsi:type="tts">Hier wird schön gesprochen!</action>
+    </button>
+    <button id="btn2-0">
+      <position x="2" y="0" dimX="2" />
+      <text>.</text>
+      <style>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+    </button>
+    <button id="btn4-0">
+      <position x="4" y="0" dimX="2" />
+      <text>.</text>
+      <style>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+    </button>
+    <button id="btn6-0">
+      <position x="6" y="0" dimX="2" />
+      <text>.</text>
+      <style>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+    </button>
+    <button id="btn8-0">
+      <position x="8" y="0" />
+      <icon>basic\png\arrow500.png</icon>
+      <style>
+        <buttonBackColor>#009696</buttonBackColor>
+      </style>
+    </button>
+    <button id="btn9-0">
+      <position x="9" y="0" />
+      <icon>basic\png\delete30.png</icon>
+      <style>
+        <buttonBackColor>#009696</buttonBackColor>
+      </style>
+    </button>
+    <!-- row 2 -->
+    <button id="btn0-2">
+      <position x="0" y="2" dimX="10" />
+      <text>ABC</text>
+      <style>
+        <buttonBackColor>#00B8E6</buttonBackColor>
+        <buttonFontColor>#FFF</buttonFontColor>
+      </style>
+      <action xsi:type="switch" grid="main" />
+    </button>
+    <!-- row 3 -->
+    <button id="btn0-3">
+      <position x="0" y="3" />
+      <text>.</text>
+    </button>
+    <button id="btn1-3">
+      <position x="1" y="3" />
+      <text>,</text>
+    </button>
+    <button id="btn2-3">
+      <position x="2" y="3" />
+      <text>!</text>
+    </button>
+    <button id="btn3-3">
+      <position x="3" y="3" />
+      <text>?</text>
+    </button>
+    <button id="btn4-3">
+      <position x="4" y="3" />
+      <text>:</text>
+    </button>
+    <button id="btn5-3">
+      <position x="5" y="3" />
+      <text>;</text>
+    </button>
+    <button id="btn6-3">
+      <position x="6" y="3" />
+      <text>/</text>
+    </button>
+    <button id="btn7-3">
+      <position x="7" y="3" />
+      <text>-</text>
+    </button>
+    <button id="btn8-3">
+      <position x="8" y="3" />
+      <text>+</text>
+    </button>
+    <button id="btn9-3">
+      <position x="9" y="3" />
+      <text>*</text>
+    </button>
+  </grid>
+  
+</keyboard>

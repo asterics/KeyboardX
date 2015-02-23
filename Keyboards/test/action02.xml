@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Testing various actions:
+ - all buttons have text to speech actions
+ - first row has log actions and select actions, first button selects second and the other way round
+ - second row has time actions which delay text to speech actions (if synchronous execution is on)
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  <grid id="g1">
+    <dimension cols="2" rows="2" />
+    
+    <button id="btn0-0">
+      <position x="0" y="0" />
+      <text>Hallo</text>
+      <action xsi:type="log">log message of btn0-0</action>
+      <action xsi:type="tts">hallo</action>
+      <action xsi:type="select" button="btn1-0"/>
+    </button>
+    <button id="btn1-0">
+      <position x="1" y="0" />
+      <text>Welt!</text>
+      <action xsi:type="log">log message of btn1-0</action>
+      <action xsi:type="tts">welt</action>
+      <action xsi:type="select" button="btn0-0"/>
+    </button>
+
+    <button id="btn0-1">
+      <position x="0" y="1" />
+      <icon>basic/png/star82.png</icon>
+      <action xsi:type="time">1000</action>
+      <action xsi:type="tts">das ist ein stern</action>
+      <!-- <action xsi:type="tts">this is a star</action> -->
+    </button>
+    <button id="btn1-1">
+      <position x="1" y="1" />
+      <icon>basic/png/heart118.png</icon>
+      <action xsi:type="time">2000</action>
+      <action xsi:type="tts">das ist ein herz</action>
+      <!-- <action xsi:type="tts">this is a heart</action> -->
+    </button>
+  </grid>
+</keyboard>
