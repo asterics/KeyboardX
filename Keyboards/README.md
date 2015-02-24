@@ -1,10 +1,10 @@
 # Keyboards
 
 Contains the [XML Schema for keyboards]
-(https://github.com/s3huber/KeyboardX/tree/master/Keyboards/schema), 
-[test](https://github.com/s3huber/KeyboardX/tree/master/Keyboards/test) and 
-[demo](https://github.com/s3huber/KeyboardX/tree/master/Keyboards/showroom) keyboards and some 
-[scripts](https://github.com/s3huber/KeyboardX/tree/master/Keyboards/bin). 
+(https://github.com/asterics/KeyboardX/tree/master/Keyboards/schema), 
+[test](https://github.com/asterics/KeyboardX/tree/master/Keyboards/test) and 
+[demo](https://github.com/asterics/KeyboardX/tree/master/Keyboards/showroom) keyboards and some 
+[scripts](https://github.com/asterics/KeyboardX/tree/master/Keyboards/bin). 
 
 ## showroom
 

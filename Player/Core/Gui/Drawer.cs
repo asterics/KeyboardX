@@ -10,7 +10,7 @@ namespace Player.Core.Gui
     /// <see cref="Draw()"/> is called from GUI thread.
     /// </summary>
     /// TODOs:
-    ///  TODO 5: if button contains icon and text, text should be closer at icon (https://github.com/s3huber/KeyboardX/issues/5)
+    ///  TODO 5: if button contains icon and text, text should be closer at icon (https://github.com/asterics/KeyboardX/issues/5)
     public interface Drawer : IDisposable
     {
         event EventHandler<ClickEventArgs> Click;

@@ -19,7 +19,7 @@ namespace Player.Core.Scan
     ///    there should be some log message that trigger is discarded.
     /// </remarks>
     /// TODOs:
-    ///  TODO 5: [scan] refactor whole scanning process, see https://github.com/s3huber/KeyboardX/issues/1
+    ///  TODO 5: [scan] refactor whole scanning process, see https://github.com/asterics/KeyboardX/issues/1
     ///  TODO 4: [scan] show error message when exception occurs while scanning (and scanner is broken)
     interface Scanner
     {

@@ -6,7 +6,7 @@ It was originally developed as a master thesis project for [Institut Integriert 
 
 ## Features
 
-KeyboardX consists of two parts, the [player application](https://github.com/s3huber/KeyboardX/blob/master/Player) which is able to open a given [keyboard](https://github.com/s3huber/KeyboardX/blob/master/Keyboards/showroom) file.
+KeyboardX consists of two parts, the [player application](https://github.com/asterics/KeyboardX/blob/master/Player) which is able to open a given [keyboard](https://github.com/asterics/KeyboardX/blob/master/Keyboards/showroom) file.
 
 Further a graphical editor for building keyboard files comfortably is planed.
 
@@ -29,12 +29,12 @@ Is written in C# for the Windows plattform and has the following features:
 
 ## Documentation
 
-Please look at the [wiki](https://github.com/s3huber/KeyboardX/wiki) for documentation, examples and other information.
+Please look at the [wiki](https://github.com/asterics/KeyboardX/wiki) for documentation, examples and other information.
 
 ## Contribution
 
-If you like or find this software useful, please consider to solve one or two [issues]( https://github.com/s3huber/KeyboardX/issues?q=is%3Aopen+is%3Aissue+label%3Atodo).
+If you like or find this software useful, please consider to solve one or two [issues]( https://github.com/asterics/KeyboardX/issues?q=is%3Aopen+is%3Aissue+label%3Atodo).
 
 ## License
 
-KeyboardX is licensed under the GNU General Public License v2, see [LICENSE](https://github.com/s3huber/KeyboardX/blob/master/LICENSE).
+KeyboardX is licensed under the GNU General Public License v2, see [LICENSE](https://github.com/asterics/KeyboardX/blob/master/LICENSE).
