@@ -52,25 +52,36 @@ namespace Player.Core.Element
             string path = null;
 
             /* hard coded path */
+
             path = KeyboardBuilderFactory.HARD_CODED_KEYBOARD;
-            if (File.Exists(path))
+            if (!String.IsNullOrWhiteSpace(path))
             {
-                logger.Debug("Loading keyboard from hard coded path... ({0})", path);
-                return LoadKeyboardModel(path);
+                if (File.Exists(path))
+                {
+                    logger.Debug("Loading keyboard from hard coded path... ({0})", path);
+                    return LoadKeyboardModel(path);
+                }
+                else
+                    logger.Warn("No keyboard file found on hard coded path (\"{0}\")!", path);
             }
 
             /* command line argument */
+
             string[] args = Environment.GetCommandLineArgs();
             if (args.Length > 1)
-                path = args[1];
-            if (File.Exists(path))
             {
-                logger.Debug("Loading keyboard from command line argument... ({0})", path);
-                return LoadKeyboardModel(path);
+                path = args[1];
+                if (File.Exists(path))
+                {
+                    logger.Debug("Loading keyboard from command line argument... ({0})", path);
+                    return LoadKeyboardModel(path);
+                }
+                else
+                    logger.Error("No keyboard file found on given argument path (\"{0}\")!", path);
             }
-            // TODO 5: show command line error when file doesn't exist
 
             /* open file dialog */
+
             path = GetPathFromFileDialog();
             if (File.Exists(path))
             {
