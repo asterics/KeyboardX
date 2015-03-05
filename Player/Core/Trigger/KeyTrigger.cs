@@ -25,7 +25,6 @@ namespace Player.Core.Trigger
     /// http://www.dreamincode.net/forums/topic/180436-global-hotkeys/
     /// </remarks>
     /// TODOs:
-    ///  TODO 5: should be able to listen to several keys not just one
     ///  TODO 3: should be able to get key events even when not focused (see above, Global Hot Keys)
     ///  TODO 1: if times need to be more accurate, think about how it could be done
     class KeyTrigger : BaseTrigger
