@@ -7,8 +7,6 @@ namespace Player.Core.Scan
     /// <summary>
     /// Base class for <see cref="ColumnRowScanner"/> and <see cref="RowColumnScanner"/>.
     /// </summary>
-    /// TODOs:
-    ///  TODO 4: when a whole row or column is empty it's not detected
     abstract class ColumnRowBaseScanner : BaseScanner
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();

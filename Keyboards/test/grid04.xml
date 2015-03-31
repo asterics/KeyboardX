@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Test grid for ColumnRowScanner/RowColumnScanner containing empty columns/rows.
+-->
+<keyboard
+    xmlns="http://www.jku.at/iis/something"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dev1-commented.xsd"
+    version="20150101"
+>
+  <default>
+    <scanner>
+      <type>row-column</type>
+      <!-- <type>column-row</type> -->
+      <localCycleLimit>5</localCycleLimit>
+    </scanner>
+  </default>
+  
+  <grid id="g1">
+    <dimension cols="5" rows="5" />
+    <button id="btn1-1">
+      <position x="1" y="1" />
+      <text>btn1-1</text>
+      <action xsi:type="switch" grid="g2" />
+    </button>
+    <button id="btn3-1">
+      <position x="3" y="1" />
+      <text>btn3-1</text>
+      <action xsi:type="switch" grid="g2" />
+    </button>
+    <button id="btn1-3">
+      <position x="1" y="3" />
+      <text>btn1-3</text>
+      <action xsi:type="switch" grid="g2" />
+    </button>
+    <button id="btn3-3">
+      <position x="3" y="3" />
+      <text>btn3-3</text>
+      <action xsi:type="switch" grid="g2" />
+    </button>
+  </grid>
+
+  <grid id="g2">
+    <dimension cols="5" rows="5" />
+    <button id="btn2-0">
+      <position x="2" y="0" />
+      <text>btn2-0</text>
+      <action xsi:type="switch" grid="g3" />
+    </button>
+    <button id="btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+      <action xsi:type="switch" grid="g3" />
+    </button>
+    <button id="btn2-4">
+      <position x="2" y="4" />
+      <text>btn2-4</text>
+      <action xsi:type="switch" grid="g3" />
+    </button>
+  </grid>
+
+  <grid id="g3">
+    <dimension cols="5" rows="5" />
+    <button id="btn0-2">
+      <position x="0" y="2" />
+      <text>btn0-2</text>
+      <action xsi:type="switch" grid="g1" />
+    </button>
+    <button id="btn2-2">
+      <position x="2" y="2" />
+      <text>btn2-2</text>
+      <action xsi:type="switch" grid="g1" />
+    </button>
+    <button id="btn4-2">
+      <position x="4" y="2" />
+      <text>btn4-2</text>
+      <action xsi:type="switch" grid="g1" />
+    </button>
+  </grid>
+</keyboard>

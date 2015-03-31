@@ -20,6 +20,30 @@ namespace Player.Load.Element
 
         public int Rows { get; private set; }
 
+        private int _nonEmptyCols = -1;
+        public int NonEmptyCols
+        {
+            get
+            {
+                if (_nonEmptyCols < 0)
+                    _nonEmptyCols = Cols - CountEmptyCols();
+                
+                return _nonEmptyCols;
+            }
+        }
+
+        private int _nonEmptyRows = -1;
+        public int NonEmptyRows
+        {
+            get
+            {
+                if (_nonEmptyRows < 0)
+                    _nonEmptyRows = Rows - CountEmptyRows();
+
+                return _nonEmptyRows;
+            }
+        }
+
         private Button[,] buttonGrid;
 
         public ButtonModel this[int x, int y]
@@ -162,6 +186,40 @@ namespace Player.Load.Element
         {
             if (y < 0 || y >= Rows)
                 throw new ArgumentOutOfRangeException("y", "Argument 'y' is out of range!");
+        }
+
+        private int CountEmptyCols()
+        {
+            int n = Cols;
+            for (int x = 0; x < Cols; x++)
+                for (int y = 0; y < Rows; y++)
+                {
+                    if (buttonGrid[x, y] != null)
+                    {
+                        n--;
+                        break;
+                    }
+
+                }
+
+            return n;
+        }
+
+        private int CountEmptyRows()
+        {
+            int n = Rows;
+            for (int y = 0; y < Rows; y++)
+                for (int x = 0; x < Cols; x++)
+                {
+                    if (buttonGrid[x, y] != null)
+                    {
+                        n--;
+                        break;
+                    }
+
+                }
+
+            return n;
         }
     }
 }

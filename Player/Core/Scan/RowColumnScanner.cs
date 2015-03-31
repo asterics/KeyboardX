@@ -69,13 +69,13 @@ namespace Player.Core.Scan
 
         private bool SwitchedToLocalBecauseOfRowCount()
         {
-            if (grid.Rows > 1)
+            if (grid.NonEmptyRows > 1)
                 return false;
             else
             {
-                logger.Trace("Grid has only 1 row, so row scanning makes no sense.");
+                logger.Trace("Grid has only 1 (nonempty) row, so row scanning makes no sense.");
 
-                y = 0;
+                MoveToNextNonEmptyRow();
                 SwitchToLocalScanning();
 
                 return true;
@@ -94,6 +94,13 @@ namespace Player.Core.Scan
 
         private void SelectNextRow()
         {
+            ButtonGroup row = MoveToNextNonEmptyRow();
+            logger.Trace("Selecting row {0}...", y);
+            SelectButtons(row);
+        }
+
+        private ButtonGroup MoveToNextNonEmptyRow()
+        {
             ButtonGroup row;
             do
             {
@@ -102,8 +109,7 @@ namespace Player.Core.Scan
             }
             while (row.IsEmpty());
 
-            logger.Trace("Selecting row {0}...", y);
-            SelectButtons(row);
+            return row;
         }
 
         /// <summary>Moves internal row pointer to next row depending on settings.</summary>

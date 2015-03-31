@@ -69,13 +69,15 @@ namespace Player.Core.Scan
 
         private bool SwitchedToLocalBecauseOfColumnCount()
         {
-            if (grid.Cols > 1)
+            if (grid.NonEmptyCols > 1)
                 return false;
             else
             {
-                logger.Trace("Grid has only 1 column, so column scanning makes no sense.");
-                x = 0;
+                logger.Trace("Grid has only 1 (nonempty) column, so column scanning makes no sense.");
+
+                MoveToNextNonEmptyCol();
                 SwitchToLocalScanning();
+
                 return true;
             }
         }
@@ -92,6 +94,13 @@ namespace Player.Core.Scan
 
         private void SelectNextCol()
         {
+            ButtonGroup col = MoveToNextNonEmptyCol();
+            logger.Trace("Selecting column {0}...", x);
+            SelectButtons(col);
+        }
+
+        private ButtonGroup MoveToNextNonEmptyCol()
+        {
             ButtonGroup col;
             do
             {
@@ -100,8 +109,7 @@ namespace Player.Core.Scan
             }
             while (col.IsEmpty());
 
-            logger.Trace("Selecting column {0}...", x);
-            SelectButtons(col);
+            return col;
         }
 
         /// <summary>Moves internal row pointer to next column depending on settings.</summary>

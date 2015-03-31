@@ -14,6 +14,12 @@ namespace Player.Model
 
         int Rows { get; }
 
+        /// <summary>Number of columns that contain at least one button.</summary>
+        int NonEmptyCols { get; }
+
+        /// <summary>Number of rows that contain at least one button.</summary>
+        int NonEmptyRows { get; }
+
         ButtonModel this[int x, int y] { get; }
 
         ButtonModel this[string buttonId] { get; }
