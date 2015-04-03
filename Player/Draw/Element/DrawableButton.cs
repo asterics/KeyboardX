@@ -29,6 +29,8 @@ namespace Player.Draw.Element
 
         public Rectangle PixelPosition { get; set; }
 
+        public Rectangle[] BorderRectangles { get; set; }
+
         public ButtonText Text
         {
             get { return model.Text; }

@@ -13,7 +13,6 @@ namespace Player.Draw.Grid
     /// E.g.: <c>border button border button border button border</c>...
     /// </summary>
     /// TODOs:
-    ///  TODO 5: [performance] don't construct border rectangles for every button on every draw
     ///  TODO 4: [performance] add GridCachedBorderDrawer which caches all drawn buttons in a bitmap
     class GridBorderDrawer : GridBaseDrawer
     {
@@ -41,7 +40,7 @@ namespace Player.Draw.Grid
 
                 if (borderWidth > 0) 
                 {
-                    Rectangle[] rects = CreateBorderRects(btn.PixelPosition);
+                    Rectangle[] rects = btn.BorderRectangles;
                     if (btn.Status.MouseOver)
                         mouseRects.AddRange(rects);
                     else if (btn.Status.Selected)
@@ -86,11 +85,12 @@ namespace Player.Draw.Grid
                 rect.Height = pos.DimY * (elementHeight + borderWidth) - borderWidth;
 
                 btn.PixelPosition = rect;
+                btn.BorderRectangles = CreateBorderRects(rect);
                 logger.Trace("Set pixel position of button '{0}' to {1}.", btn.Id, btn.PixelPosition);
             }
         }
 
-        protected Rectangle[] CreateBorderRects(Rectangle btnRect)
+        protected virtual Rectangle[] CreateBorderRects(Rectangle btnRect)
         {
             Rectangle left = new Rectangle();
             left.X = btnRect.X - borderWidth;

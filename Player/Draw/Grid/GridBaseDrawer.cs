@@ -93,7 +93,7 @@ namespace Player.Draw.Grid
 
         protected abstract void DrawGrid(Graphics g);
 
-        private void DrawBack(Graphics g)
+        protected virtual void DrawBack(Graphics g)
         {
             g.FillRectangle(grid.BackBrush, 0, 0, CanvasSize.Width, CanvasSize.Height);
             // background image could be possible here too
