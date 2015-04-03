@@ -4,15 +4,18 @@ KeyboardX is a multi-purpose on-screen keyboard. It was designed with the needs 
 
 It was originally developed as a master thesis project for [Institut Integriert Studieren](http://jku.at/iis) at [JKU](http://jku.at). Currently it's hosted as an open source project by [Kompetenznetzwerk KI-I ](http://ki-i.at).
 
+
+## Documentation
+
+Please look at the [wiki](https://github.com/asterics/KeyboardX/wiki) for full documentation, examples and other information.
+
+ - [Getting Started](https://github.com/asterics/KeyboardX/wiki/Getting-Started)
+ - [Development Instructions](https://github.com/asterics/KeyboardX/wiki/Development)
+ - [Screenshots](https://github.com/asterics/KeyboardX/wiki/Screenshots)
+
 ## Features
 
 KeyboardX consists of two parts, the [player application](https://github.com/asterics/KeyboardX/blob/master/Player) which is able to open a given [keyboard](https://github.com/asterics/KeyboardX/blob/master/Keyboards/showroom) file.
-
-Further a graphical editor for building keyboard files comfortably is planed.
-
-### Keyboards
-
-A keyboard is basically a XML file which is defined by XML Schema. A keyboard contains one or several grids. The player shows one grid at a time. Keyboards allow a very flexible structure.
 
 ### Player
 
@@ -27,9 +30,12 @@ Is written in C# for the Windows plattform and has the following features:
    - TCP command
    - text to speech
 
-## Documentation
+### Keyboards
 
-Please look at the [wiki](https://github.com/asterics/KeyboardX/wiki) for documentation, examples and other information.
+A keyboard is basically a XML file which is defined by XML Schema. A keyboard contains one or several grids. The player shows one grid at a time. Keyboards allow a very flexible structure.
+
+Further a graphical editor for building keyboard files comfortably is planed.
+
 
 ## Contribution
 
