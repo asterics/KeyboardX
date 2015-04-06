@@ -10,7 +10,7 @@ It was originally developed as a master thesis project for [Institut Integriert 
 Please look at the [wiki](https://github.com/asterics/KeyboardX/wiki) for full documentation, examples and other information.
 
  - [Getting Started](https://github.com/asterics/KeyboardX/wiki/Getting-Started)
- - [Development Instructions](https://github.com/asterics/KeyboardX/wiki/Development)
+ - [Development Hints](https://github.com/asterics/KeyboardX/wiki/Development)
  - [Screenshots](https://github.com/asterics/KeyboardX/wiki/Screenshots)
 
 ## Features
@@ -21,7 +21,11 @@ KeyboardX consists of two parts, the [player application](https://github.com/ast
 
 Is written in C# for the Windows plattform and has the following features:
  - flexible configuration hierarchy
- - icon support (jpeg, png, bmp, svg, wmf)
+   - override settings at many levels
+ - different drawers
+   - `GridBorderDrawer`
+   - `GridBorderGapDrawer`
+   - `GridBorderMarginDrawer`
  - scanning
    - different scanning mode per grid
    - linear scanning, column-row scanning, row-column scanning
@@ -29,10 +33,19 @@ Is written in C# for the Windows plattform and has the following features:
  - actions
    - TCP command
    - text to speech
+ - open source and extensible: implement your own drawers, scanners and actions
 
 ### Keyboards
 
 A keyboard is basically a XML file which is defined by XML Schema. A keyboard contains one or several grids. The player shows one grid at a time. Keyboards allow a very flexible structure.
+
+ - several grids per keyboard
+ - own configuration per grid
+ - buttons
+   - icon support (jpeg, png, bmp, svg, wmf)
+   - background-color
+   - cloning of buttons
+ - empty space (NOP buttons), allow flexible layout
 
 Further a graphical editor for building keyboard files comfortably is planed.
 
@@ -40,6 +53,8 @@ Further a graphical editor for building keyboard files comfortably is planed.
 ## Contribution
 
 If you like or find this software useful, please consider to solve one or two [issues]( https://github.com/asterics/KeyboardX/issues?q=is%3Aopen+is%3Aissue+label%3Atodo).
+
+Things you should read before starting development can be found in the wiki under  [Development](https://github.com/asterics/KeyboardX/wiki/Development).
 
 ## License
 
