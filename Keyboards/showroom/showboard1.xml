@@ -24,24 +24,24 @@ Basic text, icons and background color.
     </button>
     <button id="bt01">
       <position x="0" y="1" />
-      <icon>animal\png\deer2.png</icon>
+      <icon>basic\png\tags3.png</icon>
       <style>
         <buttonBackColor>#3399ff</buttonBackColor>
       </style>
     </button>
     <button id="bt11">
       <position x="1" y="1" />
-      <icon>animal\png\deer4.png</icon>
+      <icon>basic\png\zip8.png</icon>
     </button>
     <button id="bt02">
       <position x="0" y="2" />
-      <icon>basic\png\document68.png</icon>
-      <text>icon and text</text>
+      <icon>basic\png\speech64.png</icon>
+      <text alignment="bottom">icon and text</text>
     </button>
     <button id="bt12">
       <position x="1" y="2" />
-      <icon>basic\png\star82.png</icon>
-      <text>all 3</text>
+      <icon>basic\png\triple14.png</icon>
+      <text alignment="top">all 3</text>
       <style>
         <buttonBackColor>#33d685</buttonBackColor>
       </style>

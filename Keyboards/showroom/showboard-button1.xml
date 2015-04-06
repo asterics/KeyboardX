@@ -161,6 +161,7 @@ Show buttons greater one and some drawing stuff.
       <drawer>border-margin</drawer>
       <gridBorderColor>#FF00CC</gridBorderColor>
       <marginWidth>10</marginWidth>
+      <mouseColor>#FF0</mouseColor>
     </style>
     <dimension cols="7" rows="7" />
     <button id="b1">

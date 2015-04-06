@@ -216,7 +216,8 @@ Keyboard for final presentation of master thesis.
 
   <grid id="number">
     <scanner>
-      <startTop>false</startTop>
+      <type>column-row</type>
+      <startLeft>false</startLeft>
     </scanner>
     <dimension cols="10" rows="4" />
     <!-- row 0 -->
