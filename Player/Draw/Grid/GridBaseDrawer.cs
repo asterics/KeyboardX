@@ -19,7 +19,7 @@ namespace Player.Draw.Grid
     /// => Share spare pixels first right then left on the outside of grid.
     /// </remarks>
     /// TODOs:
-    ///  TODO 5: [performance] try to enhance scaling of images (use brush/texture)
+    ///  TODO 6: [performance] try to enhance scaling of images (use brush/texture)
     ///  TODO 5: [performance] add cache for scaled image to drawable button
     ///  TODO 4: [performance] add a border selector that uses 2 layers, 1st for buttons, 2nd for border drawing
     abstract class GridBaseDrawer : Drawer
@@ -79,7 +79,7 @@ namespace Player.Draw.Grid
             DrawGrid(g);
 
             sw.Stop();
-            logger.Trace("draw needed {0}ms", sw.ElapsedMilliseconds);
+            logger.Debug("draw needed {0}ms", sw.ElapsedMilliseconds);
 
             // TODO 1: [performance] eventually play around with this values
             //g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Low;

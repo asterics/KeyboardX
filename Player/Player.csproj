@@ -148,7 +148,7 @@
     <Compile Include="Core\Trigger\KeyTrigger.cs" />
     <Compile Include="Core\Trigger\Trigger.cs" />
     <Compile Include="Core\Trigger\TriggerEventArgs.cs" />
-    <Compile Include="Draw\Button\AlignedDrawer.cs" />
+    <Compile Include="Draw\Button\ButtonAlignedDrawer.cs" />
     <Compile Include="Draw\Button\BorderDrawer.cs" />
     <Compile Include="Draw\Button\ButtonBaseDrawer.cs" />
     <Compile Include="Draw\Button\SimpleIconDrawer.cs" />

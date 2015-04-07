@@ -18,9 +18,7 @@ namespace Player.Draw
 
         public static Drawer CreateDrawer(GridModel grid, GridStatus status)
         {
-            //return CreateDevDrawer(grid, status); // TODO B4RELEASE: create the right drawer
-
-            ButtonBaseDrawer buttonDrawer = new AlignedDrawer();
+            ButtonBaseDrawer buttonDrawer = new ButtonAlignedDrawer();
 
             string type = grid.Style.DrawerType;
             switch (type)
@@ -35,9 +33,9 @@ namespace Player.Draw
 
         private static Drawer CreateDevDrawer(GridModel grid, GridStatus status)
         {
-            logger.Debug("Creating DevelopmentDrawer...");
+            logger.Info("Creating DevDrawer...");
 
-            ButtonBaseDrawer drawer = new AlignedDrawer();
+            ButtonBaseDrawer drawer = new SimpleIconDrawer();
             return new GridBorderDrawer(grid, status, drawer);
             //return new GridBorderGapDrawer(grid, status, drawer);
             //return new GridBorderMarginDrawer(grid, status, drawer);
@@ -47,7 +45,7 @@ namespace Player.Draw
         {
             logger.Debug("Creating BorderDrawer consisting of: AlignedDrawer, GridBorderDrawer");
 
-            ButtonBaseDrawer drawer = new AlignedDrawer();
+            ButtonBaseDrawer drawer = new ButtonAlignedDrawer();
             return new GridBorderDrawer(grid, status, drawer);
         }
 
@@ -78,7 +76,7 @@ namespace Player.Draw
             logger.Debug("Creating AlignedDrawer consisting of: BackgroundColorDrawer, AlignedDrawer, SimpleGridDrawer");
 
             ButtonBaseDrawer drawer;
-            drawer = new AlignedDrawer();
+            drawer = new ButtonAlignedDrawer();
             drawer = new BorderDrawer(drawer);
             return new SimpleGridDrawer(grid, status, drawer);
         }

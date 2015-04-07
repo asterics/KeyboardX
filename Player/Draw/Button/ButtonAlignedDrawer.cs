@@ -12,7 +12,7 @@ namespace Player.Draw.Button
     /// <summary>
     /// Draws icon and text of a button considering display mode and alignment.
     /// </summary>
-    class AlignedDrawer : ButtonBaseDrawer, IDisposable
+    class ButtonAlignedDrawer : ButtonBaseDrawer, IDisposable
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
@@ -24,12 +24,12 @@ namespace Player.Draw.Button
         protected Dictionary<TextAlignment, StringFormat> alignedFormats;
 
 
-        public AlignedDrawer()
+        public ButtonAlignedDrawer()
         {
             Init();
         }
 
-        public AlignedDrawer(ButtonBaseDrawer drawerToDecorate)
+        public ButtonAlignedDrawer(ButtonBaseDrawer drawerToDecorate)
             :base(drawerToDecorate)
         {
             Init();
